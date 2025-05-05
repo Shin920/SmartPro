@@ -1,0 +1,16 @@
+﻿<xml>
+	<Header  length='200' descr='공제받지 못할 매입세액 명세서' ver='201609'/>
+	<Columns>
+        <Column ColID='(3)'  allowNull='N' position='9'   length='11' type='Num'  allowDecimal=''    allowMinus='N'  descr='매수합계_세금계산서'/>
+        <Column ColID='(4)'  allowNull='N' position='20'  length='15' type='Num'  allowDecimal='N'   allowMinus='Y'  descr='공급가액합계_ 세금계산서' />
+        <Column ColID='(5)'  allowNull='N' position='35'  length='15' type='Num'  allowDecimal='N'   allowMinus='Y'  descr='매입세액합계_ 세금계산서' />
+        <Column ColID='(6)'  allowNull='N' position='50'  length='15' type='Num'  allowDecimal='N'   allowMinus='Y'  descr='공통매입 공급가액 합계 안분계산' />
+        <Column ColID='(7)'  allowNull='N' position='65'  length='15' type='Num'  allowDecimal='N'   allowMinus='Y'  descr='공통매입세액합계 안분계산' />
+        <Column ColID='(8)'  allowNull='N' position='80'  length='15' type='Num'  allowDecimal='N'   allowMinus='Y'  descr='불공제매입세액합계 안분계산' />
+        <Column ColID='(9)'  allowNull='N' position='95'  length='15' type='Num'  allowDecimal='N'   allowMinus='Y'  descr='불공제매입세액총액합계 정산내역' />
+        <Column ColID='(10)' allowNull='N' position='110' length='15' type='Num'  allowDecimal='N'   allowMinus='Y'  descr='기불공제매입세액합계 정산내역' />
+        <Column ColID='(11)' allowNull='N' position='125' length='15' type='Num'  allowDecimal='N'   allowMinus='Y'  descr='가산/공제매입 세액합계 정산내역' />
+        <Column ColID='(12)' allowNull='N' position='140' length='15' type='Num'  allowDecimal='N'   allowMinus='Y'  descr='가산/공제매입 세액합계 납부 재계산' />
+        <Column ColID='(13)' allowNull='Y' position='155' length='45' type='Char'  allowDecimal='N'   allowMinus=''  descr='공란' />
+	</Columns>
+</xml>

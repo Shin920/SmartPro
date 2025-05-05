@@ -1,0 +1,86 @@
+﻿<%@ Page language="c#" CodeFile="DocuRef.aspx.cs" AutoEventWireup="false" Inherits="SMART.Common.Forms.WorkFlow.DocuRef" %>
+
+<%@ Register TagPrefix="cc1" Namespace="ExGridCtrl" Assembly="ExGridCtrl" %>
+<%@ Register TagPrefix="cc2" Namespace="ImgButton" Assembly="ImgButton" %>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" >
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+	<head id="Head1" runat="server">
+		<title>
+			<% Response.Write( strHTitle ); %>
+		</title>
+		
+		<link href="/SINT/Common/Style/SINTForm.css" rel="stylesheet" type="text/css" />	
+	</head>
+	
+	<body onunload="ReturnParent()"  topmargin="10" leftmargin="6">
+		
+		<script language="javascript" type="text/javascript">
+		<!--
+		function ReturnParent() 
+		{ 
+			if ( !opener.closed )
+				opener.document.body.onfocus=null;
+				opener.document.body.onactivate=null;
+		}
+		-->
+		</script>
+		
+		<form id="DocuRef1" method="post" runat="server">
+			<cc1:ExGrid id="Grid" runat="server" Width="343px" Height="203px" CanEdit="True" MaxRows="30" OrderColumnName="No." OrderColumnWidth="30" UseOrderColumn="True" C01_ID="EmpCode" C01_Width="70" C02_ID="EmpName" C02_Z="MergePrev = True|UsePopup = True|" C02_Width="80" C03_ID="ReadCheck" C03_Z="Type = Check|Disable = True|CheckYValue = Y|CheckNValue = N|" C03_Width="20" C04_ID="ReadDateTime" C04_Width="100" C04_Z="Disable = True|MergePrev = True|" C02_Popup="Module = OM#$ClsName = EmpMaster#$MethodName = Popup#$Condition = EmpCode/EmpName/DeptName/#$LeftOffset = 200#$UpperOffset = 0#$WindowTitle = 회람자선택#$PopupWidth = 250#$PopupHeight = 200#$C01_ID = EmpCode#$C02_ID = EmpName#$" C01_Z="KeyValue = True|" C14_Width="0" CHdrInFrame="False" Module="OM" FixedColumn="True" C07_Width="0" C17_Width="0" C11_Width="0" DefaultRows="10" PassValue="False" SelColor="#80FFFF" C12_Width="0" C15_Width="0" C19_Width="0" C16_Width="0" C08_Width="0" C20_Width="0" C09_Width="0" C18_Width="0" C10_Width="0" CustomCH="False" StartQuery="False" C13_Width="0" C06_Width="0" C05_Width="0" CanDelRow="True" CanAddRow="True" CanAddChild="True" TreeColumnWidth="200" ParentYOffset="0" ParentXOffset="0" MaxLevel="10" UseTree="False" UseDelRowServerEvent="False" UseAddRowServerEvent="False" ExcelRowCnt="1" ExcelColCnt="5" UseAddChildServerEvent="False" EnableViewState="False" IgnoreBlankRow="False" ActionOnDblClick="False" AddChildScript="" AddRowScript="" CanCopyRow="False" ClsName="" Condition="" CopyRowScript="" DelRowScript="" InsRowScript="" MethodName="" OnClick="" PasteRowScript="" UseInsRowServerEvent="False">
+				<Columns>
+					<cc1:Column KeyValue="True" ColID="UserID" MergeWidth="152" Name="컬럼명" Width="70" Align="" DateType="" SubTotalTitlePos="0" Type=""></cc1:Column>
+					<cc1:Column AlternateText="회람자선택" ColID="UserName" C01_ID="UserID" UsePopup="True" ClsName="SmartUser" MethodName="Popup" MergePrev="True" PopupWidth="250" Module="OM" PopupHeight="200" MergeWidth="80" Condition="UserID/UserName/" LeftOffset="200" C02_ID="UserName" ToolTip="회람자선택" WindowTitle="회람자선택" Name="컬럼명" Width="80" Align="" DateType="" SubTotalTitlePos="0" Type="" UsePopupWidth="True"></cc1:Column>
+					<cc1:Column CheckNValue="N" ColID="ReadCheck" CheckYValue="Y" Type="Check" MergeWidth="122" Name="컬럼명" Width="20" Disable="True" SubTotalTitlePos="0"></cc1:Column>
+					<cc1:Column ColID="ReadDateTime" MergePrev="True" MergeWidth="100" Name="컬럼명" Width="100" Disable="True" SubTotalTitlePos="0"></cc1:Column>
+				</Columns>
+			</cc1:ExGrid>
+			
+			<!-- Space -->
+            <table width="343px" cellpadding="0" cellspacing="0" border="0">
+                <tr>
+                    <td height="6"> </td>
+                </tr>
+            </table>
+			
+			
+			<table width="343px" border="0">
+			    <tr>
+			        <td align="center">				
+			            <cc2:uimgbutton id="btnOK" ButtonType="OK" runat="server" Font-Names="" OnClick="btnOK_Click"></cc2:uimgbutton>
+			            <asp:Button id="btnLoad"  runat="server" Height="0px" Width="0px" Text="Button" OnClick="btnLoad_Click"></asp:Button>
+            		</td>
+			    </tr>
+			</table>	
+			
+			<!-- Hidden -->
+            <asp:TextBox id="txtViewState" runat="server" Height="0px" Width="0px"></asp:TextBox>			
+            <asp:TextBox id="txtLoaded" runat="server" Height="0px" Width="0px"></asp:TextBox>
+			
+		</form>
+		
+		<script language="javascript" type="text/javascript">
+        <!--
+        // set ViewState and Data Load
+        if ( null != window.opener ) 
+        { 
+	        if ( null != window.opener.document.all['txtViewState'] ) 
+	        { 
+		        if ( "" == document.all['txtLoaded'].value ) 
+		        { 
+			        document.all['txtViewState'].value = window.opener.document.all['txtViewState'].value;
+			        document.all['btnLoad'].click();
+		        }
+	        }
+        }
+        -->
+		</script>
+
+<%
+	Response.Write ( m_strScriptTarget );
+	m_strScriptTarget = "";
+%>
+
+	</body>
+</html>

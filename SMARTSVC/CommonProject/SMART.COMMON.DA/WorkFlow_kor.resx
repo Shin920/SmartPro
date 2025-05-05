@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="POP01">
+		<value>경로코드</value>
+		<comment></comment>
+	</data>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter</value>
+	</resheader>
+	<data name="POP02">
+		<value>경로명</value>
+	</data>
+	<data name="POP03">
+		<value>작성단계명</value>
+	</data>
+	<data name="POP04">
+		<value>경로사용여부</value>
+	</data>
+	<data name="POP05">
+		<value>단계수</value>
+	</data>
+	<data name="POP06">
+		<value>단계명은 10자이하여야 합니다.</value>
+	</data>
+	<data name="POP07">
+		<value>한 결재 경로에 동일한 사원이 존재합니다.</value>
+	</data>
+	<data name="M01">
+		<value>결재문서 정보를 가져올 수 없습니다.</value>
+	</data>
+	<data name="P01">
+		<value>번째 행의 결재사용여부</value>
+	</data>
+	<data name="M02">
+		<value>저장에 실패하였습니다.</value>
+	</data>
+	<data name="M03">
+		<value>결재단계는 최소한 2단계 이상이 되어야 합니다.</value>
+	</data>
+	<data name="M04">
+		<value>결재경로 중복성을 체크할 수 없습니다.</value>
+	</data>
+	<data name="M05">
+		<value>동일한 결재경로 코드가 이미 존재합니다.</value>
+	</data>
+	<data name="P02">
+		<value>결재권자</value>
+	</data>
+	<data name="M06">
+		<value>결재경로 정보를 가져올 수 없습니다.</value>
+	</data>
+	<data name="M07">
+		<value>삭제에 실패하였습니다.</value>
+	</data>
+	<data name="M08">
+		<value>기본결재선 정보를 가져올 수 없습니다.</value>
+	</data>
+	<data name="P03">
+		<value>사용자 ID</value>
+	</data>
+	<data name="P04">
+		<value>기본결재선</value>
+	</data>
+	<data name="P05">
+		<value>대결자</value>
+	</data>
+	<data name="P06">
+		<value>언어</value>
+	</data>
+	<data name="P07">
+		<value>사업장</value>
+	</data>
+	<data name="P08">
+		<value>결재문서구분</value>
+	</data>
+	<data name="P09">
+		<value>원천번호</value>
+	</data>
+	<data name="P10">
+		<value>결재경로</value>
+	</data>
+	<data name="P11">
+		<value>결재상태</value>
+	</data>
+	<data name="P12">
+		<value>결재자</value>
+	</data>
+	<data name="P13">
+		<value>결재시각</value>
+	</data>
+	<data name="P14">
+		<value>회람자</value>
+	</data>
+	<data name="P15">
+		<value>회람상태</value>
+	</data>
+	<data name="M09">
+		<value>결재정보 저장에 실패하였습니다.</value>
+	</data>
+	<data name="M10">
+		<value>결재 정보를 가져올 수 없습니다.</value>
+	</data>
+	<data name="M11">
+		<value>결재정보 삭제에 실패하였습니다.</value>
+	</data>
+	<data name="M12">
+		<value>결재할 항목이 선택되지 않았습니다.</value>
+	</data>
+	<data name="M13">
+		<value>번 항목의 결재에 실패하였습니다.</value>
+	</data>
+	<data name="M14">
+		<value>회람처리할 항목이 선택되지 않았습니다.</value>
+	</data>
+	<data name="M15">
+		<value>회람처리에 실패하였습니다.</value>
+	</data>
+	<data name="M16">
+		<value>결재함 정보를 가져올 수 없습니다.</value>
+	</data>
+	<data name="M17">
+		<value>결재현황 정보를 가져올 수 없습니다.</value>
+	</data>
+	<data name="M18">
+		<value>회람문서 정보를 가져올 수 없습니다.</value>
+	</data>
+	<data name="M19">
+		<value>사용자그룹 유효성 체크에 실패하였습니다.</value>
+	</data>
+	<data name="M20">
+		<value>존재하지 않는 사용자 그룹이 선택되었습니다.</value>
+	</data>
+	<data name="M21">
+		<value>존재하지 않는 결재권자가 선택되었습니다.</value>
+	</data>
+	<data name="M22">
+		<value>결재권자 유효성 체크에 실패하였습니다.</value>
+	</data>
+</root>

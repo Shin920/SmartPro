@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://CGW.UsgKorea.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://CGW.UsgKorea.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://CGW.UsgKorea.com">
+      <s:element name="GridGateWay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bStartQuery" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strModule" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClassName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMethodName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conditions" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GridGateWayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GridGateWayResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TreeGateWay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bStartQuery" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strModule" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClassName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMethodName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conditions" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TreeGateWayResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TreeGateWayResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GridGateWaySoapIn">
+    <wsdl:part name="parameters" element="tns:GridGateWay" />
+  </wsdl:message>
+  <wsdl:message name="GridGateWaySoapOut">
+    <wsdl:part name="parameters" element="tns:GridGateWayResponse" />
+  </wsdl:message>
+  <wsdl:message name="TreeGateWaySoapIn">
+    <wsdl:part name="parameters" element="tns:TreeGateWay" />
+  </wsdl:message>
+  <wsdl:message name="TreeGateWaySoapOut">
+    <wsdl:part name="parameters" element="tns:TreeGateWayResponse" />
+  </wsdl:message>
+  <wsdl:portType name="CGWSoap">
+    <wsdl:operation name="GridGateWay">
+      <wsdl:input message="tns:GridGateWaySoapIn" />
+      <wsdl:output message="tns:GridGateWaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TreeGateWay">
+      <wsdl:input message="tns:TreeGateWaySoapIn" />
+      <wsdl:output message="tns:TreeGateWaySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CGWSoap" type="tns:CGWSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GridGateWay">
+      <soap:operation soapAction="http://CGW.UsgKorea.com/GridGateWay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TreeGateWay">
+      <soap:operation soapAction="http://CGW.UsgKorea.com/TreeGateWay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CGWSoap12" type="tns:CGWSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GridGateWay">
+      <soap12:operation soapAction="http://CGW.UsgKorea.com/GridGateWay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TreeGateWay">
+      <soap12:operation soapAction="http://CGW.UsgKorea.com/TreeGateWay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CGW">
+    <wsdl:port name="CGWSoap" binding="tns:CGWSoap">
+      <soap:address location="http://localhost/SmartPro/CGW.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CGWSoap12" binding="tns:CGWSoap12">
+      <soap12:address location="http://localhost/SmartPro/CGW.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

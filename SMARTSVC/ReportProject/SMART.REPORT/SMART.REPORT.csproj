@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1515E656-D7DD-40EA-991C-E575A8372E8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMART.REPORT</RootNamespace>
+    <AssemblyName>SMART.REPORT</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.2.Export, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v20.2.Core, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v20.2, Version=20.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="SMART.OS.DS">
+      <HintPath>..\..\LOGProject\SMART.OS.DS\bin\Debug\SMART.OS.DS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="REPORT_LINK.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\CFL\CommonFunctionLibrary\CommonFunctionLibrary.csproj">
+      <Project>{85f8bd55-e004-4fa5-9bcd-3050a9e9ad16}</Project>
+      <Name>CommonFunctionLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommonProject\SMART.COMMON.DA\SMART.COMMON.DA.csproj">
+      <Project>{bd84e1c3-22ab-4a22-833f-afd16f29bf54}</Project>
+      <Name>SMART.COMMON.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommonProject\SMART.COMMON.DS\SMART.COMMON.DS.csproj">
+      <Project>{e48fcfe6-4d03-4449-b102-25e2d6f2f1b3}</Project>
+      <Name>SMART.COMMON.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FINProject\SMART.GL.DA\SMART.GL.DA.csproj">
+      <Project>{74674a47-e27b-477f-aad8-3f33c57bf27b}</Project>
+      <Name>SMART.GL.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FINProject\SMART.GL.DS\SMART.GL.DS.csproj">
+      <Project>{3cf5cca5-605d-4a50-a753-cab717ecb54e}</Project>
+      <Name>SMART.GL.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HRMProject\SMART.HR.DA\SMART.HR.DA.csproj">
+      <Project>{dbaed741-16c2-4ece-9eaa-07ed4a425e3f}</Project>
+      <Name>SMART.HR.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\HRMProject\SMART.HR.DS\SMART.HR.DS.csproj">
+      <Project>{a20e3a66-7999-4d58-ac61-8912d785f15c}</Project>
+      <Name>SMART.HR.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.EX.DA\SMART.EX.DA.csproj">
+      <Project>{f782d363-10e3-4717-ba70-9cf999b98083}</Project>
+      <Name>SMART.EX.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.EX.DS\SMART.EX.DS.csproj">
+      <Project>{b8c92f22-ff4f-47e4-97b0-bcd8124ef24d}</Project>
+      <Name>SMART.EX.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.IM.DA\SMART.IM.DA.csproj">
+      <Project>{f185cfe7-5d3d-42d0-bffd-6ed63ddd99e5}</Project>
+      <Name>SMART.IM.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.IM.DS\SMART.IM.DS.csproj">
+      <Project>{2151569d-422e-4f20-9c02-0a71e9386351}</Project>
+      <Name>SMART.IM.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.MM.DA\SMART.MM.DA.csproj">
+      <Project>{813bd8a1-4d30-4282-aae9-6461f218d092}</Project>
+      <Name>SMART.MM.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.MM.DS\SMART.MM.DS.csproj">
+      <Project>{e4b45cb0-7d81-483f-9aa6-57f248cdf55a}</Project>
+      <Name>SMART.MM.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.NP.DA\SMART.NP.DA.csproj">
+      <Project>{7950aac2-2d78-4448-bc25-ccfb69856181}</Project>
+      <Name>SMART.NP.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.NP.DS\SMART.NP.DS.csproj">
+      <Project>{6f95c4cc-2e91-4eee-abf8-f59486ccca44}</Project>
+      <Name>SMART.NP.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.PM.DA\SMART.PM.DA.csproj">
+      <Project>{266e9c32-3f17-42a6-8f6f-e6188f3b63a9}</Project>
+      <Name>SMART.PM.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.PM.DS\SMART.PM.DS.csproj">
+      <Project>{d11598bf-59d3-45b1-8893-5b69c9973073}</Project>
+      <Name>SMART.PM.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.PO.DA\SMART.PO.DA.csproj">
+      <Project>{81dd3ee4-b6a6-479f-bb2b-e634aff9a9f2}</Project>
+      <Name>SMART.PO.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.PO.DS\SMART.PO.DS.csproj">
+      <Project>{2666e5e5-c06b-46fe-923f-57831761c267}</Project>
+      <Name>SMART.PO.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.QM.DA\SMART.QM.DA.csproj">
+      <Project>{970dae1d-9c46-42b8-974f-36a6264a94e4}</Project>
+      <Name>SMART.QM.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.QM.DS\SMART.QM.DS.csproj">
+      <Project>{92f553b5-196c-485c-ae9a-41e5750dcf90}</Project>
+      <Name>SMART.QM.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.SD.DA\SMART.SD.DA.csproj">
+      <Project>{97ea4632-660d-453c-b8d6-07d376728d1d}</Project>
+      <Name>SMART.SD.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\LOGProject\SMART.SD.DS\SMART.SD.DS.csproj">
+      <Project>{b74e6bb1-6013-4e6e-a9b9-08f54da47d4d}</Project>
+      <Name>SMART.SD.DS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MNGProject\SMART.OM.DA\SMART.OM.DA.csproj">
+      <Project>{c6250977-ea0e-4382-9afb-9883e6e5e976}</Project>
+      <Name>SMART.OM.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MNGProject\SMART.OM.DS\SMART.OM.DS.csproj">
+      <Project>{a7615271-3f49-46a9-8645-6ad5e5fbd3f5}</Project>
+      <Name>SMART.OM.DS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EX\" />
+    <Folder Include="GL\" />
+    <Folder Include="HR\" />
+    <Folder Include="IM\" />
+    <Folder Include="MM\" />
+    <Folder Include="NP\" />
+    <Folder Include="OM\OM068\" />
+    <Folder Include="OS\" />
+    <Folder Include="PM\" />
+    <Folder Include="PO\" />
+    <Folder Include="QM\" />
+    <Folder Include="SD\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

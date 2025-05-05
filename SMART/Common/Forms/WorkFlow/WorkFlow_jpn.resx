@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="P01">
+		<value>件&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 名</value>
+		<comment>Type your comment in here</comment>
+	</data>
+	<resheader name="ResMimeType">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="Version">
+		<value>1.0.0.0</value>
+	</resheader>
+	<resheader name="Reader">
+		<value>System.Resources.ResXResourceReader</value>
+	</resheader>
+	<resheader name="Writer">
+		<value>System.Resources.ResXResourceWriter</value>
+	</resheader>
+	<data name="P02">
+		<value>説&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 明</value>
+	</data>
+	<data name="P03">
+		<value>経&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 路</value>
+	</data>
+	<data name="P04">
+		<value>確認</value>
+	</data>
+	<data name="P05">
+		<value>削除</value>
+	</data>
+	<data name="P06">
+		<value>文書添付エラー</value>
+	</data>
+	<data name="P07">
+		<value>添付するファイルを選択してください。</value>
+	</data>
+	<data name="P08">
+		<value>受信者</value>
+	</data>
+	<data name="P09">
+		<value>件&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp; 名</value>
+	</data>
+	<data name="P10">
+		<value>本&amp;nbsp; &amp;nbsp;&amp;nbsp;&amp;nbsp; &amp;nbsp;文</value>
+	</data>
+	<data name="P11"><value>内部</value></data>
+	<data name="P12">
+		<value>外部</value>
+	</data>
+	<data name="P13">
+		<value>伝送</value>
+	</data>
+	<data name="P14">
+		<value>取消</value>
+	</data>
+	<data name="P15">
+		<value>受信者のメールアドレスを入力してください。</value>
+	</data>
+	<data name="P16">
+		<value>受信者のメールアドレスの誤りです。</value>
+	</data>
+	<data name="P17">
+		<value>メールの件名を入力してください。</value>
+	</data>
+	<data name="P18">
+		<value>個人設定情報のメールアドレス項目を設定してください。</value>
+	</data>
+	<data name="P19"><value>個人設定情報のメールアドレスに誤りがあります。</value></data>
+	<data name="P20">
+		<value>照会開始</value>
+	</data>
+	<data name="P21">
+		<value>照会終了</value>
+	</data>
+	<data name="P23">
+		<value>件名を入力してください。</value>
+	</data>
+	<data name="P22">
+		<value>文書添付</value>
+	</data>
+	<data name="P24">
+		<value>期間</value>
+	</data>
+	<data name="P25"><value>決&amp;nbsp;裁&amp;nbsp;者</value></data>
+	<data name="P26">
+		<value>接続パスワード</value>
+	</data>
+	<data name="P27">
+		<value>決裁パスワード</value>
+	</data>
+	<data name="P28">
+		<value>メール発送</value>
+	</data>
+	<data name="P29">
+		<value>決裁要請メール発送</value>
+	</data>
+	<data name="P30">
+		<value>回 覧 者</value>
+	</data>
+	<data name="P31">
+		<value>社員名</value>
+	</data>
+	<data name="P32">
+		<value>回覧状態</value>
+	</data>
+	<data name="P33">
+		<value>回覧時刻</value>
+	</data>
+	<data name="P34"><value>回覧者情報が重複しました。</value></data>
+	<data name="P35">
+		<value>決裁経路</value>
+	</data>
+	<data name="P36">
+		<value>摘&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; 要</value>
+	</data>
+	<data name="P37">
+		<value>[ 回覧者数 : </value>
+	</data>
+	<data name="P38">
+		<value>]</value>
+	</data>
+	<data name="P39">
+		<value>決裁</value>
+	</data>
+	<data name="P40">
+		<value>專決</value>
+	</data>
+	<data name="P41">
+		<value>保留</value>
+	</data>
+	<data name="P42">
+		<value>返送</value>
+	</data>
+	<data name="P43">
+		<value>回覧</value>
+	</data>
+	<data name="P44">
+		<value>決済承認</value>
+	</data>
+	<data name="P45">
+		<value>回覧</value>
+	</data>
+	<data name="P46">
+		<value>決裁</value>
+	</data>
+	<data name="P47">
+		<value>決裁経路を選択してください。</value>
+	</data>
+	<data name="P48">
+		<value>起案</value>
+	</data>
+	<data name="P49">
+		<value>取消</value>
+	</data>
+</root>

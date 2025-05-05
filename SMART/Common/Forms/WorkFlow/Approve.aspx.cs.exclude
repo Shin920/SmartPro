@@ -1,0 +1,110 @@
+﻿using System;
+using System.Collections;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Web;
+using System.Web.SessionState;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
+
+namespace SMART.Common.Forms.WorkFlow
+{
+
+    public partial class Approve : System.Web.UI.Page  //SMART.Advanced.WebForm
+    {
+
+        protected string strHTitle;
+
+        public Approve()
+        {
+            Page.Init += new System.EventHandler(Page_Init);
+        }
+
+        private void Page_Load(object sender, System.EventArgs e)
+        {
+            // Put user code to initialize the page here
+        }
+
+        private void Page_Init(object sender, EventArgs e)
+        {
+
+            //  InitializeComponent();
+
+            G = ((GObj)Session["G"]);
+
+            // Render StyleSheet ( After Permission Check )
+            Response.Write(G.StyleSheet);
+
+            //Setting
+            lblPassWd.Text = CFL.RS("P26", "WorkFlow", Server, ((GObj)Session["G"]).LangID);
+            lblWfPassWd.Text = CFL.RS("P27", "WorkFlow", Server, ((GObj)Session["G"]).LangID);
+            lblSendMail.Text = CFL.RS("P28", "WorkFlow", Server, ((GObj)Session["G"]).LangID);
+            lblUser.Text = CFL.RS("P25", "WorkFlow", Server, ((GObj)Session["G"]).LangID);
+            chkSendMail.Text = CFL.RS("P29", "WorkFlow", Server, ((GObj)Session["G"]).LangID);
+            btnOK.Text = CFL.RS("P04", "WorkFlow", Server, ((GObj)Session["G"]).LangID);
+            strHTitle = CFL.RS("P44", "WorkFlow", Server, ((GObj)Session["G"]).LangID);
+
+            if (!this.IsPostBack)
+            {
+                lblUserName.Text = G.UserName;
+
+                chkSendMail.Checked = false;
+                //// 취소시 다음결재권자에게 멜보내기 추가
+                ////  string aa = Request["ActionType"] + Request["Action"];
+
+                //if ("Approve" == Request["ActionType"] || "Approve" == Request["Action"] || "Cancel" == Request["Action"])
+                //{
+                //    chkSendMail.Checked = true;
+                //}
+                //else
+                //{
+                //    chkSendMail.Checked = false;
+                //    chkSendMail.Enabled = false;
+                //}
+            }
+
+        }
+
+        GObj G;
+
+        public string m_strScriptTarget = "";
+
+        #region Web Form Designer generated code
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            this.Load += new System.EventHandler(this.Page_Load);
+
+        }
+        #endregion
+
+        protected void btnOK_Click(object sender, System.EventArgs e)
+        {
+
+            //  SVC.xErpUserSoap Obj = new SVC.xErpUserSoap();
+            SMART.OM.DA.SmartUser Obj = new SMART.OM.DA.SmartUser();
+
+            // You will need to Additional Certification for WorkFlow in the Future
+            object[] alData = CFL.ArrayListToObject(Obj.ValidateUserWf(G.LangID, G.UserID, txtPassWd.Text, txtWfPassWd.Text, G.ClientID, null, null, G.UserIP, null));
+
+            if ("00" != alData[0].ToString())
+            {
+                m_strScriptTarget = CFL.GetMsg(alData[1].ToString());
+                return;
+            }
+
+
+            string strSendMail = chkSendMail.Checked ? "Y" : "N";
+
+            //  Response.Write(CFL.GetToParentScript("txtSendMail", strSendMail, "btnAction", "WfDocument", 1, false));
+            Response.Write(CFL.GetToParentScript("txtSendMail", strSendMail, "btnAction", "WfDocument1", 1, false));    // <-- FormID
+
+        }
+    }
+}

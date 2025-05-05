@@ -1,0 +1,151 @@
+﻿
+.title {
+    text-decoration: none;
+    color: #4988B1;
+    height: 12px;
+    letter-spacing: -1px;
+    padding: 3px 10px;
+    background: url(/SmartPro/Contents/Main/images/icon_title.png) no-repeat 0 50%;
+    font-weight: bold;
+}
+
+.smart_table_head {
+    height: 3px;
+    background-color: #C0D4E3;
+}
+
+.smart_table_foot {
+    height: 1px;
+    background-color: #BDBEBD;
+    width: 100%;
+}
+
+.smart_table_default {
+    border: 1px solid #666666;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.smart_table_th_default {
+    border: 1px solid #ccc;
+    background: #f4f4f4;
+    padding: 1px 5px 1px 5px;
+    text-align: left;
+}
+
+.smart_table_th_left {
+    border: 1px solid #ccc;
+    background: #f4f4f4;
+    padding: 1px 5px 1px 5px;
+}
+
+.smart_table_th_center {
+    border: 1px solid #ccc;
+    background: #f4f4f4;
+    padding: 1px 5px 1px 5px;
+}
+
+.smart_table_th_right {
+    border: 1px solid #ccc;
+    background: #f4f4f4;
+    padding: 1px 5px 1px 5px;
+    text-align: right;
+}
+
+.smart_table_td_default {
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 2px 5px 2px 5px;
+    text-align: left;
+}
+
+/* dashboard 프레임 관련 21.07.21 추가 */
+.frame_title {
+    height: 26px;
+    margin: -5px -5px 5px;
+    padding-left: 10px;
+    padding-top: 2px;
+    background-image: linear-gradient(#5478b2, #3964a8);
+    border-bottom: 1px solid #43567a;
+}
+
+    .frame_title > span {
+        color: #fff;
+        font-weight: 400;
+        font-size: 12px;
+        padding-left: 20px;
+        background: url('/SmartPro/Contents/Main/images/frame_title.png') no-repeat 0 2px;
+    }
+
+/* dashboard 사용자정보 관련 21.07.21 추가 */
+img.img_user {
+    border: 3px solid #e5e5e5;
+    height: 94px;
+    width: 94px;
+    border-radius: 50px;
+    background-color: #fff;
+    background: url('/SmartPro/Contents/Main/images/img_user_default.png') no-repeat center;
+}
+
+.usertitle {
+    display: inline-block;
+    width: 70px;
+    font-size: 14px;
+    color: #222;
+    font-weight: bold;
+}
+
+.usertitle2 {
+    display: inline-block;
+    width: 60px;
+    font-size: 12px;
+    color: #222;
+    font-weight: bold;
+}
+
+.usercontents {
+    font-size: 14px;
+    color: #444;
+    font-weight: normal;
+}
+
+.usercontents2 {
+    font-size: 12px;
+    color: #444;
+    font-weight: normal;
+}
+
+.user_table_border {
+    border-top: 1px solid #d2d7df;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+/* dashboard 결재정보 관련 21.07.21 추가 */
+.approval_table {
+}
+
+    .approval_table tr td {
+        vertical-align: center;
+        font-size: 12px;
+        color: #222;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
+.approval_img {
+    text-align: center;
+}
+
+/*step*/
+.step {
+    width: 146px;
+    height: 72px;
+    text-align: center;
+    color: #2C6385;
+    vertical-align: middle;
+    padding: 20px 5px 6px 5px;
+}
+.space {
+    white-space: pre !important;
+} 

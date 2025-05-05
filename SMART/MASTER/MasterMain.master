@@ -1,0 +1,391 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/MASTER/MasterRoot.master" AutoEventWireup="true" CodeFile="MasterMain.master.cs" Inherits="MASTER_MasterMain" %>
+
+<asp:Content ID="Content" ContentPlaceHolderID="RootContent" runat="server">
+
+    <script type="text/javascript">
+
+        function init() {
+            addTabMenu("MAIN", "메인화면", "MainContent.aspx");
+
+            // 트리뷰 바인딩  -->  (2022.7.8) : 이 부분을 막고, cs 쪽에 넣어주어야.. 권한에 따른 Visible 처리가 됨
+        //  callbackTree.PerformCallback();
+
+            //첫번째 메뉴 오픈 (USER)
+            menuClick("1");
+
+            //트리뷰 Hegith 세팅
+            jqUpdateSizeH();
+        }
+
+        function jqUpdateSizeH() {
+            // Get the dimensions of the viewport
+            //var w = $(window).width();
+            var h = $(window).height();
+            var h_static = 207;  // 상단 제외 영역 높이
+
+            callbackTree.SetHeight(h - h_static);
+        };
+        // resize event handler
+        $(window).resize(jqUpdateSizeH);     // When the browser changes size
+        
+
+        function menuClick(menuID) {
+
+            document.getElementById("divTree01").style.display = "none";
+            document.getElementById("divTree02").style.display = "none";
+            document.getElementById("divTree03").style.display = "none";
+            document.getElementById("divTree04").style.display = "none";
+            document.getElementById("divTree05").style.display = "none";
+            document.getElementById("divTree06").style.display = "none";
+            document.getElementById("divTree07").style.display = "none";
+            document.getElementById("divTree08").style.display = "none";
+            document.getElementById("divTree09").style.display = "none";
+            document.getElementById("divTree10").style.display = "none";
+            document.getElementById("divTree11").style.display = "none";
+
+            switch (menuID) {
+                case "1":
+                    document.getElementById("divTree01").style.display = "";
+                    //document.getElementById("menuTitle").innerText = "MY";
+                    document.getElementById("menuTitle").innerText = hidLang2.Get("L01451");
+                    break;
+                case "2":
+                    document.getElementById("divTree02").style.display = "";
+                    document.getElementById("menuTitle").innerText = "영업관리";
+                //  document.getElementById("menuTitle").innerText = hidLang2.Get("L01450");
+                    break;
+                case "3":
+                    document.getElementById("divTree03").style.display = "";
+                    document.getElementById("menuTitle").innerText = "구매관리";
+                //  document.getElementById("menuTitle").innerText = hidLang2.Get("L01443");
+                    break;
+                case "4":
+                    document.getElementById("divTree04").style.display = "";
+                    document.getElementById("menuTitle").innerText = "생산관리";
+                //  document.getElementById("menuTitle").innerText = hidLang2.Get("L01444");
+                    break;
+                case "5":
+                    document.getElementById("divTree05").style.display = ""; 
+                    document.getElementById("menuTitle").innerText = "품질관리";
+                //  document.getElementById("menuTitle").innerText = hidLang2.Get("L01445");
+                    break;
+                case "6":
+                    document.getElementById("divTree06").style.display = "";
+                    document.getElementById("menuTitle").innerText = "설비관리";
+                //  document.getElementById("menuTitle").innerText = hidLang2.Get("L02875");
+                    break;
+                case "7":
+                    document.getElementById("divTree07").style.display = "";
+                    document.getElementById("menuTitle").innerText = "재무관리";
+                //  document.getElementById("menuTitle").innerText = hidLang2.Get("L01447");
+                    break;
+                case "8":
+                    document.getElementById("divTree08").style.display = "";
+                    document.getElementById("menuTitle").innerText = "인사급여";
+                //  document.getElementById("menuTitle").innerText = hidLang2.Get("L01448");
+                    break;
+                case "10":
+                    document.getElementById("divTree10").style.display = "";
+                    document.getElementById("menuTitle").innerText = "SCM관리";
+                //  document.getElementById("menuTitle").innerText = hidLang2.Get("L01449");
+                    break;
+
+                case "11":
+                    document.getElementById("divTree11").style.display = "";
+                    document.getElementById("menuTitle").innerText = "AI관리";                
+                    break;
+
+                case "9":
+                    document.getElementById("divTree09").style.display = "";
+                    document.getElementById("menuTitle").innerText = "운영관리";
+                //  document.getElementById("menuTitle").innerText = hidLang2.Get("L01449");
+                    break;
+            }            
+        }
+
+        function mainSplitterResized(s, e) {
+
+            if (e.pane.name == "splitLeft") {
+                if (e.pane.lastWidth <= 67) {
+                    //$(".dragToggle").addClass("open");
+                    $(".menuBottom").hide(0);
+                    $(".menuBottomIcon").show(0);
+                } else {
+                    //$(".dragToggle").removeClass("open");
+                    $(".menuBottom").show(0);
+                    $(".menuBottomIcon").hide(0);
+                }
+            }
+        }
+
+        function mainSplitterResizedBottomBtn() {
+
+            //$(".dragToggle").removeClass("open");
+            $(".menuBottom").show(0);
+            $(".menuBottomIcon").hide(0);
+
+            var oPane = mainSplitter.GetPaneByName('splitLeft');
+            oPane.SetSize(267);
+        }
+
+        function mainSplitterPaneCollapsing() {
+            $(".dragToggle").addClass("open");
+        }
+
+        function mainSplitterPaneExpanding() {
+            $(".dragToggle").removeClass("open");
+        }
+
+        function DownSeetrol() {
+            location.href = "/SmartPro//Contents/Seetrol/GIN_원격지원.exe";
+        }
+        
+
+        // - 우측마우스 누름 방지 - // 
+        function click()
+        {
+            // 개발자 Option처리 기능 확인 필요...함 (?)
+            if((event. button==2) || (event.button==3))
+            {
+                //if (txtLoginUserID.GetText() == "SPADMIN") {
+                if (txtLoginUserID.GetText() != "SPADMIN") {
+                    alert("마우스 오른쪽 버튼은 사용 할 수 없습니다.");
+                    return;
+                }
+            }
+        }
+
+        document.onmousedown = click;
+
+    </script>
+
+    <%-- 메뉴 표현 --%>
+    <dx:ASPxSplitter ID="mainSplitter" ClientInstanceName="mainSplitter" runat="server" Width="100%" Height="100%">
+        <ClientSideEvents PaneResized="mainSplitterResized" PaneCollapsing="mainSplitterPaneCollapsing" PaneExpanding="mainSplitterPaneExpanding" />
+        <Styles>
+            <Pane Border-BorderWidth="0px">
+                <Paddings Padding="0px" />
+                <Border BorderWidth="0px"></Border>
+            </Pane>
+        </Styles>
+        <Panes>
+            <dx:SplitterPane Name="splitLeft" ShowCollapseBackwardButton="True" Size="317" MinSize="67" MaxSize="317" ScrollBars="None">
+                <PaneStyle>
+                    <Paddings Padding="0px"></Paddings>
+                </PaneStyle>
+                <ContentCollection>
+                    <dx:SplitterContentControl>
+
+                        <div class="contentWrap">
+                            <div id="" class="menuStage">
+                                <div id="" class="menuWrap">
+                                    <div id="" class="menuCategory">
+                                        <ul class="">
+                                            <li>
+                                                <a id="menu01" onclick="javascript:menuClick('1')" style="cursor: pointer;">
+                                                    <span class="icon_01"></span>
+                                                    <span>MY</span>
+                                                </a>
+                                            </li> 
+                                            
+                                            <li>
+                                                <a id="menu03" onclick="javascript:menuClick('2')" style="cursor: pointer;" runat="server">
+                                                    <span class="icon_06"></span>                                                    
+                                                    <span> <%=strMenu03 %></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a id="menu04" onclick="javascript:menuClick('3')" style="cursor: pointer;" runat="server">
+                                                    <span class="icon_04"></span>                                                    
+                                                    <span> <%=strMenu04 %></span>
+                                                </a>
+                                            </li>
+                                            
+                                            <li>
+                                                <a id="menu05" onclick="javascript:menuClick('4')" style="cursor: pointer;" runat="server">
+                                                    <span class="icon_12"></span>                                                    
+                                                    <span> <%=strMenu05 %></span>
+                                                </a>
+                                            </li>
+                                            
+                                            <li>
+                                                <a id="menu06" onclick="javascript:menuClick('5')" style="cursor: pointer;" runat="server">
+                                                    <span class="icon_29"></span>                                                    
+                                                    <span> <%=strMenu06 %></span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a id="menu07" onclick="javascript:menuClick('6')" style="cursor: pointer;" runat="server">
+                                                    <span class="icon_16"></span>                                                    
+                                                    <span> <%=strMenu07 %></span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a id="menu08" onclick="javascript:menuClick('7')" style="cursor: pointer;" runat="server">
+                                                    <span class="icon_08"></span>                                                    
+                                                    <span> <%=strMenu08 %></span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a id="menu09" onclick="javascript:menuClick('8')" style="cursor: pointer;" runat="server">
+                                                    <span class="icon_11"></span>                                                    
+                                                    <span> <%=strMenu09 %></span>
+                                                </a>
+                                            </li>    
+                                            
+                                            <li>
+                                                <a id="menu10" onclick="javascript:menuClick('10')" style="cursor: pointer;" runat="server">
+                                                    <span class="icon_15"></span>                                                    
+                                                    <span> <%=strMenu10 %></span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a id="menu11" onclick="javascript:menuClick('11')" style="cursor: pointer;" runat="server">
+                                                    <span class="icon_16"></span>                                                    
+                                                    <span> <%=strMenu11 %></span>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a id="menu02" onclick="javascript:menuClick('9')" style="cursor: pointer;" runat="server">
+                                                    <span class="icon_03"></span>
+                                                    <%--<span>시스템관리</span>--%>
+                                                    <span> <%=strMenu02 %></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div id="" class="menuTree">
+                                        <p  id="menuTitle" class=""></p>
+                                        <dx:ASPxCallbackPanel ID="callbackTree" ClientInstanceName="callbackTree" runat="server" OnCallback="callbackTree_Callback" ScrollBars="Auto" SettingsLoadingPanel-Enabled="false">
+                                            <SettingsLoadingPanel Enabled="False"></SettingsLoadingPanel>
+                                            <PanelCollection>
+                                                <dx:PanelContent ID="panelTree" runat="server">
+                                                    <%-- MY --%>
+                                                    <div id="divTree01" style="display: block;">
+                                                        <dx:ASPxTreeView ID="treeMY" ClientInstanceName="treeMY" runat="server" BackColor="White" Width="100%" Theme="Office2003Blue" />
+                                                    </div>
+                                                    <%-- 영업관리 --%>
+                                                    <div id="divTree02" style="display: none;">
+                                                        <dx:ASPxTreeView ID="tree2" ClientInstanceName="tree2" runat="server" BackColor="White" Width="100%" Theme="Office2003Blue" />
+                                                    </div>
+                                                    <%-- 구매관리 --%>
+                                                    <div id="divTree03" style="display: none;">
+                                                        <dx:ASPxTreeView ID="tree3" ClientInstanceName="tree3" runat="server" BackColor="White" Width="100%" Theme="Office2003Blue" />
+                                                    </div>
+                                                    <%-- 생산관리 --%>
+                                                    <div id="divTree04" style="display: none;">
+                                                        <dx:ASPxTreeView ID="tree4" ClientInstanceName="tree4" runat="server" BackColor="White" Width="100%" Theme="Office2003Blue" />
+                                                    </div>
+                                                    <%-- 품질관리 --%>
+                                                    <div id="divTree05" style="display: none;">
+                                                        <dx:ASPxTreeView ID="tree5" ClientInstanceName="tree5" runat="server" BackColor="White" Width="100%" Theme="Office2003Blue" />
+                                                    </div>
+                                                    <%-- 설비관리 --%>
+                                                    <div id="divTree06" style="display: none;">
+                                                        <dx:ASPxTreeView ID="tree6" ClientInstanceName="tree6" runat="server" BackColor="White" Width="100%" Theme="Office2003Blue" />
+                                                    </div>
+                                                    <%-- 재무관리 --%>
+                                                    <div id="divTree07" style="display: none;">
+                                                        <dx:ASPxTreeView ID="tree7" ClientInstanceName="tree7" runat="server" BackColor="White" Width="100%" Theme="Office2003Blue" />
+                                                    </div>
+                                                    <%-- 인사급여 --%>
+                                                    <div id="divTree08" style="display: none;">
+                                                        <dx:ASPxTreeView ID="tree8" ClientInstanceName="tree8" runat="server" BackColor="White" Width="100%" Theme="Office2003Blue" />
+                                                    </div>
+
+                                                    <%-- SCM 관리 --%>
+                                                    <div id="divTree10" style="display: none;">
+                                                        <dx:ASPxTreeView ID="tree10" ClientInstanceName="tree10" runat="server" BackColor="White" Width="100%" Theme="Office2003Blue" />
+                                                    </div>
+
+                                                    <%-- AI 관리 --%>
+                                                    <div id="divTree11" style="display: none;">
+                                                        <dx:ASPxTreeView ID="tree11" ClientInstanceName="tree11" runat="server" BackColor="White" Width="100%" Theme="Office2003Blue" />
+                                                    </div>
+
+                                                    <%-- 기준정보 --%>
+                                                    <div id="divTree09" style="display: none;">
+                                                        <dx:ASPxTreeView ID="tree1" ClientInstanceName="tree1" runat="server" BackColor="White" Width="100%" Theme="Office2003Blue" />
+                                                    </div>
+
+                                                </dx:PanelContent>
+                                            </PanelCollection>
+                                        </dx:ASPxCallbackPanel>
+                                    </div>
+                                </div>
+                                <div id="menuBottom" class="menuBottom">
+                                    <p class="fLogo">
+                                        <img src="/SmartPro/Contents/Main/images/logo_f_v21.png" alt="스마트프로">
+                                     </p>
+                                    <ul class="fMenu">
+                                        <li>
+                                            <a href="http://support.gincni.com" target="_blank">
+                                                <span class="fIcon_12"></span>
+                                                <span>고객지원</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <span class="fIcon_09"></span>
+                                                <span>POP</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:DownSeetrol();">
+                                                <span class="fIcon_11"></span>
+                                                <span>원격지원</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="http://106.10.84.100/JSY_CMS/JSY_CMS.application">
+                                                <span class="fIcon_08"></span>
+                                                <span>CMS</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="menuBottomIcon" class="menuBottomIcon">
+                                    <p class="fIcon">
+                                        <a href="javascript:mainSplitterResizedBottomBtn();"><img src="/SmartPro/Contents/Main/images/smartpro_icon.png" alt="스마트프로"></a>
+                                     </p>
+                                 </div>
+                            </div>
+                        </div>
+                        
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+
+            <dx:SplitterPane Name="splitContent" ScrollBars="None">
+                <Separator Visible="true" Size="7">
+                    <%--ForwardCollapseButtonImage-Url="null" ForwardCollapseButtonImage-UrlHottracked="null" BackwardCollapseButtonImage-Url="null" BackwardCollapseButtonImage-UrlHottracked="null"--%>
+                    <SeparatorStyle CssClass="dragbar" Cursor="w-resize"></SeparatorStyle>
+                    <ButtonStyle CssClass="dragToggle" Cursor="pointer"></ButtonStyle>
+
+                    <%--<BackwardCollapseButtonImage UrlHottracked="null" Url="null"></BackwardCollapseButtonImage>
+                    <ForwardCollapseButtonImage UrlHottracked="null" Url="null"></ForwardCollapseButtonImage>--%>
+
+                </Separator>
+                <ContentCollection>
+                    <dx:SplitterContentControl>
+
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+
+        </Panes>
+
+    </dx:ASPxSplitter>
+
+    <dx:ASPxHiddenField ID="hidLang2" ClientInstanceName="hidLang2" runat="server"></dx:ASPxHiddenField>
+    <dx:ASPxTextBox ID="txtLoginUserID" ClientInstanceName="txtLoginUserID" runat="server" ClientVisible="false"></dx:ASPxTextBox>
+
+</asp:Content>

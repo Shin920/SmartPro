@@ -1,0 +1,74 @@
+﻿<!--
+Header  length : 레코드 전체 길이, descr=레코드 종류, ver=스키마 정보 작성시 기준이 된 국세청 문서 발행월
+Column position =해당 정보의 시작위치 
+       length   =해당 정보의 위치  
+       type=''  =해당 정보의 타입(Char(문자),NumChar(문자인데 숫자로 변환가능),Num(숫자),Date(날짜형:yyyyMMdd))        
+       allowMinus=해당정보가 숫자인 경우 -값을 허용하는지 여부(Y,N) 
+       allowNull=Null 허용여부 (Y,N)
+       CalID=계산식 점검에 사용될 ID(하나의 레코드에서 각 데이터컬럼의 CalID는 Unique 해야 한다)
+       descr= 설명(레코더 정보 한글명 및 번호)
+       isMinusDefineColID= 해당 컬럼값이 음수값인지 결정하는 컬럼이 있는 경우 그 컬럼의 CalID를 가리킨다
+       Fix 값은 해당 Column 노드의 자식 노드 중에 Fix 노드가 있는지 여부를 가지고 판단
+       
+       ★ 작성 예시
+       합계등 계산식이 있을때는 
+       
+        <xml>
+	        <Header  length='600' descr='일반 부가가치세 신고서' ver='201609'/>
+	        <Columns>
+                <Column position='160' length='13' type='Char' allowMinus='' CalID='test' descr='매출예정누락합계세액(14)' isMinusDefineColID=''>
+                    <Calculate> :계산식 정의 => 같은 문서형식의 같은 CalID 값의 컬럼값은 모두 합쳐진다
+                    [문서ID_1_컬럼ID_1] + [문서ID_2_컬럼ID_2] * 10 
+                    </Calculate>                    
+                </Column>
+	        </Columns>
+        </xml>   
+        
+-->
+
+<xml>
+	<Header  length='600' descr='신고서 Head 레코드' ver='201609'/>
+	<Columns>
+        <Column ColID='(1)' allowNull='N' position='9' length='13' type='Char' allowMinus='' isSumType='' descr='납세자 ID' />
+        <Column ColID='(2)'  allowNull='N' position='22' length='2' type='Char' allowMinus='' isSumType='' descr='세목코드'>
+            <Fix>
+                41
+            </Fix>
+        </Column>
+        <Column ColID='(3)'  allowNull='N' position='24' length='2' type='Char' allowMinus='' isSumType='' descr='신고구분코드'>
+            <Fix>
+                01
+            </Fix>
+            <Fix>
+                03
+            </Fix>
+        </Column>
+        <Column ColID='(4)' allowNull='N' position='26' length='2' type='Char' allowMinus='' isSumType='' descr='신고구분 상세코드' />
+        <Column ColID='(5)' allowNull='N' position='28' length='6' type='Date' allowMinus='' isSumType='' descr='과세기간 년기(월)' />
+        <Column ColID='(6)' allowNull='N' position='34' length='3' type='Char' allowMinus='' isSumType='' descr='신고서 종류코드' />
+        <Column ColID='(7)' allowNull='N' position='37' length='20' type='Char' allowMinus='' isSumType='' descr='사용자 ID' />
+        <Column ColID='(8)' allowNull='Y' position='57' length='13' type='NumChar' allowMinus='' isSumType='' descr='납세자 번호' />
+        <Column ColID='(9)' allowNull='Y' position='70' length='30' type='Char' allowMinus='' isSumType='' descr='세무대리인 성명' />
+        <Column ColID='(10)' allowNull='Y' position='100' length='4' type='Char' allowMinus='' isSumType='' descr='세무대리인 전화번호1' />
+        <Column ColID='(11)' allowNull='Y' position='104' length='5' type='Char' allowMinus='' isSumType='' descr='세무대리인 전화번호2' />
+        <Column ColID='(12)' allowNull='Y' position='109' length='5' type='Char' allowMinus='' isSumType='' descr='세무대리인 전화번호3' />
+        <Column ColID='(13)' allowNull='N' position='114' length='30' type='Char' allowMinus='' isSumType='' descr='상호(법인명)' />
+        <Column ColID='(14)' allowNull='N' position='144' length='30' type='Char' allowMinus='' isSumType='' descr='성명(대표자명)' />
+        <Column ColID='(15)' allowNull='Y' position='174' length='70' type='Char' allowMinus='' isSumType='' descr='사업장 소재지' />
+        <Column ColID='(16)' allowNull='Y' position='244' length='14' type='Char' allowMinus='' isSumType='' descr='사업장 전화번호' />
+        <Column ColID='(17)' allowNull='Y' position='258' length='70' type='Char' allowMinus='' isSumType='' descr='사업자주소' />
+        <Column ColID='(18)' allowNull='Y' position='328' length='14' type='Char' allowMinus='' isSumType='' descr='사업자전화번호' />
+        <Column ColID='(19)' allowNull='N' position='342' length='30' type='Char' allowMinus='' isSumType='' descr='업태명' />
+        <Column ColID='(20)' allowNull='N' position='372' length='50' type='Char' allowMinus='' isSumType='' descr='종목명' />
+        <Column ColID='(21)' allowNull='N' position='422' length='7' type='Char' allowMinus='' isSumType='' descr='업종코드' />
+        <Column ColID='(22)' allowNull='N' position='429' length='8' type='Date' allowMinus='' isSumType='' descr='과세기간 시작일자' />
+        <Column ColID='(23)' allowNull='N' position='437' length='8' type='Date' allowMinus='' isSumType='' descr='과세기간 종료일자' />
+        <Column ColID='(24)' allowNull='N' position='445' length='8' type='Date' allowMinus='' isSumType='' descr='작성일자' />
+        <Column ColID='(25)' allowNull='N' position='453' length='1' type='Char' allowMinus='' isSumType='' descr='보정신고구분' />
+        <Column ColID='(26)' allowNull='Y' position='454' length='14' type='Char' allowMinus='' isSumType='' descr='사업자휴대전화' />
+        <Column ColID='(27)' allowNull='N' position='468' length='4' type='Char' allowMinus='' isSumType='' descr='세무프로그램 코드' />
+        <Column ColID='(28)' allowNull='Y' position='472' length='13' type='Char' allowMinus='' isSumType='' descr='세무대리인 사업자번호' />
+        <Column ColID='(29)' allowNull='Y' position='485' length='50' type='Char' allowMinus='' isSumType='' descr='전자메일 주소' />
+        <Column ColID='(30)' allowNull='Y' position='535' length='65' type='Char' allowMinus='' isSumType='' descr='공란' />
+	</Columns>
+</xml>

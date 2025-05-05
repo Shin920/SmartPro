@@ -1,0 +1,1720 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://WorkFlow.UsgKorea.com" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://WorkFlow.UsgKorea.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://WorkFlow.UsgKorea.com">
+      <s:element name="WfSMGrid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bStartQuery" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conditions" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WfSMGridResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfSMGridResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfSMSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarFormID" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarWfUse" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarWfDescr" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="WfSMSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfSMSaveResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfSMDdl">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWfUse" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfSMDdlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfSMDdlResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfSMGetWfUse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfSMGetWfUseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfSMGetWfUseResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRGrid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bStartQuery" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conditions" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRGridResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfRGridResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="1" maxOccurs="1" name="bSaveMode" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strComCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurEmp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRouteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRouteName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFirstStepTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserGroup" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRouteDescr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRouteUse" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarStepTitle" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarUserID" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarAbsentEmp" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfRSaveResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRLoad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRouteCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRLoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfRLoadResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRItemGrid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bStartQuery" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conditions" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRItemGridResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfRItemGridResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRItemGrid2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bStartQuery" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="formID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="originSerNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="routeCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMoreKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRItemGrid2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfRItemGrid2Result" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRouteCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRDeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfRDeleteResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRPopup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bStartQuery" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conditions" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRPopupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfRPopupResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRPopup2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bStartQuery" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conditions" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRPopup2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfRPopup2Result" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRGetMail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRouteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRouteStep" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRGetMailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfRGetMailResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfPSLoad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfPSLoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfPSLoadResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfPSGrid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bStartQuery" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conditions" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfPSGridResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfPSGridResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfPSGrid1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="bStartQuery" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strWhereClause" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCondition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Conditions" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfPSGrid1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfPSGrid1Result" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultRoute">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDefaultRouteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDefaultRouteResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDomainName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDomainNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetDomainNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDSave2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginSerNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRouteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocuDescr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurStep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocuStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarUserID" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarWfStatus" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarWfDateTime" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarRefUserID" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarReadCheck" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarReadDateTime" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarRouteStep" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="WfAmount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMoreKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDSave2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfDSave2Result" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDSave">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginSerNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strRouteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocuDescr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurStep" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDocuStatus" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarUserID" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarWfStatus" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarWfDateTime" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarRefUserID" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarReadCheck" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarReadDateTime" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMoreKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDSaveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfDSaveResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDLoad1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginSerNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMoreKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDLoad1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfDLoad1Result" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDLoad2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginSerNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMoreKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDLoad2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfDLoad2Result" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDLoad3">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginSerNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMoreKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDLoad3Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfDLoad3Result" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strOriginSerNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strMoreKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDDeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfDDeleteResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDOneQue">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarFormID" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarOriginNo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarOriginSerNo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarCurStep" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarStepCnt" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAction" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDOneQueResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfDOneQueResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDReadCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurTime" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarFormID" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarOriginNo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarOriginSerNo" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="sarReadCheck" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDReadCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfDReadCheckResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfIBQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfIBQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfIBQueryResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfIBCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfIBCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfIBCountResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfMBQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIncludeA" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIncludeC" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfMBQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfMBQueryResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRBQuery">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strBDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bIncludeA" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRBQueryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfRBQueryResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRBCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRBCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfRBCountResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDoCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RouteCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfDoCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfDoCountResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRouteStep">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="userID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RouteCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WfRouteStepResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WfRouteStepResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CanBeApprove">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="RouteCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RouteStep" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FormID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginSerNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoreKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CanBeApproveResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CanBeApproveResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hasApproved">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="FormID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginSerNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoreKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="hasApprovedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="hasApprovedResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getApproveAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="RouteCode" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="RouteStep" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="FormID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OriginSerNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MoreKey" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getApproveAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getApproveAllResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="WfSMGridSoapIn">
+    <wsdl:part name="parameters" element="tns:WfSMGrid" />
+  </wsdl:message>
+  <wsdl:message name="WfSMGridSoapOut">
+    <wsdl:part name="parameters" element="tns:WfSMGridResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfSMSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:WfSMSave" />
+  </wsdl:message>
+  <wsdl:message name="WfSMSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:WfSMSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfSMDdlSoapIn">
+    <wsdl:part name="parameters" element="tns:WfSMDdl" />
+  </wsdl:message>
+  <wsdl:message name="WfSMDdlSoapOut">
+    <wsdl:part name="parameters" element="tns:WfSMDdlResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfSMGetWfUseSoapIn">
+    <wsdl:part name="parameters" element="tns:WfSMGetWfUse" />
+  </wsdl:message>
+  <wsdl:message name="WfSMGetWfUseSoapOut">
+    <wsdl:part name="parameters" element="tns:WfSMGetWfUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfRGridSoapIn">
+    <wsdl:part name="parameters" element="tns:WfRGrid" />
+  </wsdl:message>
+  <wsdl:message name="WfRGridSoapOut">
+    <wsdl:part name="parameters" element="tns:WfRGridResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfRSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:WfRSave" />
+  </wsdl:message>
+  <wsdl:message name="WfRSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:WfRSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfRLoadSoapIn">
+    <wsdl:part name="parameters" element="tns:WfRLoad" />
+  </wsdl:message>
+  <wsdl:message name="WfRLoadSoapOut">
+    <wsdl:part name="parameters" element="tns:WfRLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfRItemGridSoapIn">
+    <wsdl:part name="parameters" element="tns:WfRItemGrid" />
+  </wsdl:message>
+  <wsdl:message name="WfRItemGridSoapOut">
+    <wsdl:part name="parameters" element="tns:WfRItemGridResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfRItemGrid2SoapIn">
+    <wsdl:part name="parameters" element="tns:WfRItemGrid2" />
+  </wsdl:message>
+  <wsdl:message name="WfRItemGrid2SoapOut">
+    <wsdl:part name="parameters" element="tns:WfRItemGrid2Response" />
+  </wsdl:message>
+  <wsdl:message name="WfRDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:WfRDelete" />
+  </wsdl:message>
+  <wsdl:message name="WfRDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:WfRDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfRPopupSoapIn">
+    <wsdl:part name="parameters" element="tns:WfRPopup" />
+  </wsdl:message>
+  <wsdl:message name="WfRPopupSoapOut">
+    <wsdl:part name="parameters" element="tns:WfRPopupResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfRPopup2SoapIn">
+    <wsdl:part name="parameters" element="tns:WfRPopup2" />
+  </wsdl:message>
+  <wsdl:message name="WfRPopup2SoapOut">
+    <wsdl:part name="parameters" element="tns:WfRPopup2Response" />
+  </wsdl:message>
+  <wsdl:message name="WfRGetMailSoapIn">
+    <wsdl:part name="parameters" element="tns:WfRGetMail" />
+  </wsdl:message>
+  <wsdl:message name="WfRGetMailSoapOut">
+    <wsdl:part name="parameters" element="tns:WfRGetMailResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfPSLoadSoapIn">
+    <wsdl:part name="parameters" element="tns:WfPSLoad" />
+  </wsdl:message>
+  <wsdl:message name="WfPSLoadSoapOut">
+    <wsdl:part name="parameters" element="tns:WfPSLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfPSGridSoapIn">
+    <wsdl:part name="parameters" element="tns:WfPSGrid" />
+  </wsdl:message>
+  <wsdl:message name="WfPSGridSoapOut">
+    <wsdl:part name="parameters" element="tns:WfPSGridResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfPSGrid1SoapIn">
+    <wsdl:part name="parameters" element="tns:WfPSGrid1" />
+  </wsdl:message>
+  <wsdl:message name="WfPSGrid1SoapOut">
+    <wsdl:part name="parameters" element="tns:WfPSGrid1Response" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultRouteSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDefaultRoute" />
+  </wsdl:message>
+  <wsdl:message name="GetDefaultRouteSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDefaultRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDomainName" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDomainNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfDSave2SoapIn">
+    <wsdl:part name="parameters" element="tns:WfDSave2" />
+  </wsdl:message>
+  <wsdl:message name="WfDSave2SoapOut">
+    <wsdl:part name="parameters" element="tns:WfDSave2Response" />
+  </wsdl:message>
+  <wsdl:message name="WfDSaveSoapIn">
+    <wsdl:part name="parameters" element="tns:WfDSave" />
+  </wsdl:message>
+  <wsdl:message name="WfDSaveSoapOut">
+    <wsdl:part name="parameters" element="tns:WfDSaveResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfDLoad1SoapIn">
+    <wsdl:part name="parameters" element="tns:WfDLoad1" />
+  </wsdl:message>
+  <wsdl:message name="WfDLoad1SoapOut">
+    <wsdl:part name="parameters" element="tns:WfDLoad1Response" />
+  </wsdl:message>
+  <wsdl:message name="WfDLoad2SoapIn">
+    <wsdl:part name="parameters" element="tns:WfDLoad2" />
+  </wsdl:message>
+  <wsdl:message name="WfDLoad2SoapOut">
+    <wsdl:part name="parameters" element="tns:WfDLoad2Response" />
+  </wsdl:message>
+  <wsdl:message name="WfDLoad3SoapIn">
+    <wsdl:part name="parameters" element="tns:WfDLoad3" />
+  </wsdl:message>
+  <wsdl:message name="WfDLoad3SoapOut">
+    <wsdl:part name="parameters" element="tns:WfDLoad3Response" />
+  </wsdl:message>
+  <wsdl:message name="WfDDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:WfDDelete" />
+  </wsdl:message>
+  <wsdl:message name="WfDDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:WfDDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfDOneQueSoapIn">
+    <wsdl:part name="parameters" element="tns:WfDOneQue" />
+  </wsdl:message>
+  <wsdl:message name="WfDOneQueSoapOut">
+    <wsdl:part name="parameters" element="tns:WfDOneQueResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfDReadCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:WfDReadCheck" />
+  </wsdl:message>
+  <wsdl:message name="WfDReadCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:WfDReadCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfIBQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:WfIBQuery" />
+  </wsdl:message>
+  <wsdl:message name="WfIBQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:WfIBQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfIBCountSoapIn">
+    <wsdl:part name="parameters" element="tns:WfIBCount" />
+  </wsdl:message>
+  <wsdl:message name="WfIBCountSoapOut">
+    <wsdl:part name="parameters" element="tns:WfIBCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfMBQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:WfMBQuery" />
+  </wsdl:message>
+  <wsdl:message name="WfMBQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:WfMBQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfRBQuerySoapIn">
+    <wsdl:part name="parameters" element="tns:WfRBQuery" />
+  </wsdl:message>
+  <wsdl:message name="WfRBQuerySoapOut">
+    <wsdl:part name="parameters" element="tns:WfRBQueryResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfRBCountSoapIn">
+    <wsdl:part name="parameters" element="tns:WfRBCount" />
+  </wsdl:message>
+  <wsdl:message name="WfRBCountSoapOut">
+    <wsdl:part name="parameters" element="tns:WfRBCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfDoCountSoapIn">
+    <wsdl:part name="parameters" element="tns:WfDoCount" />
+  </wsdl:message>
+  <wsdl:message name="WfDoCountSoapOut">
+    <wsdl:part name="parameters" element="tns:WfDoCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="WfRouteStepSoapIn">
+    <wsdl:part name="parameters" element="tns:WfRouteStep" />
+  </wsdl:message>
+  <wsdl:message name="WfRouteStepSoapOut">
+    <wsdl:part name="parameters" element="tns:WfRouteStepResponse" />
+  </wsdl:message>
+  <wsdl:message name="CanBeApproveSoapIn">
+    <wsdl:part name="parameters" element="tns:CanBeApprove" />
+  </wsdl:message>
+  <wsdl:message name="CanBeApproveSoapOut">
+    <wsdl:part name="parameters" element="tns:CanBeApproveResponse" />
+  </wsdl:message>
+  <wsdl:message name="hasApprovedSoapIn">
+    <wsdl:part name="parameters" element="tns:hasApproved" />
+  </wsdl:message>
+  <wsdl:message name="hasApprovedSoapOut">
+    <wsdl:part name="parameters" element="tns:hasApprovedResponse" />
+  </wsdl:message>
+  <wsdl:message name="getApproveAllSoapIn">
+    <wsdl:part name="parameters" element="tns:getApproveAll" />
+  </wsdl:message>
+  <wsdl:message name="getApproveAllSoapOut">
+    <wsdl:part name="parameters" element="tns:getApproveAllResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WorkFlowSoap">
+    <wsdl:operation name="WfSMGrid">
+      <wsdl:input message="tns:WfSMGridSoapIn" />
+      <wsdl:output message="tns:WfSMGridSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfSMSave">
+      <wsdl:input message="tns:WfSMSaveSoapIn" />
+      <wsdl:output message="tns:WfSMSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfSMDdl">
+      <wsdl:input message="tns:WfSMDdlSoapIn" />
+      <wsdl:output message="tns:WfSMDdlSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfSMGetWfUse">
+      <wsdl:input message="tns:WfSMGetWfUseSoapIn" />
+      <wsdl:output message="tns:WfSMGetWfUseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfRGrid">
+      <wsdl:input message="tns:WfRGridSoapIn" />
+      <wsdl:output message="tns:WfRGridSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfRSave">
+      <wsdl:input message="tns:WfRSaveSoapIn" />
+      <wsdl:output message="tns:WfRSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfRLoad">
+      <wsdl:input message="tns:WfRLoadSoapIn" />
+      <wsdl:output message="tns:WfRLoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfRItemGrid">
+      <wsdl:input message="tns:WfRItemGridSoapIn" />
+      <wsdl:output message="tns:WfRItemGridSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfRItemGrid2">
+      <wsdl:input message="tns:WfRItemGrid2SoapIn" />
+      <wsdl:output message="tns:WfRItemGrid2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfRDelete">
+      <wsdl:input message="tns:WfRDeleteSoapIn" />
+      <wsdl:output message="tns:WfRDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfRPopup">
+      <wsdl:input message="tns:WfRPopupSoapIn" />
+      <wsdl:output message="tns:WfRPopupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfRPopup2">
+      <wsdl:input message="tns:WfRPopup2SoapIn" />
+      <wsdl:output message="tns:WfRPopup2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfRGetMail">
+      <wsdl:input message="tns:WfRGetMailSoapIn" />
+      <wsdl:output message="tns:WfRGetMailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfPSLoad">
+      <wsdl:input message="tns:WfPSLoadSoapIn" />
+      <wsdl:output message="tns:WfPSLoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfPSGrid">
+      <wsdl:input message="tns:WfPSGridSoapIn" />
+      <wsdl:output message="tns:WfPSGridSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfPSGrid1">
+      <wsdl:input message="tns:WfPSGrid1SoapIn" />
+      <wsdl:output message="tns:WfPSGrid1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultRoute">
+      <wsdl:input message="tns:GetDefaultRouteSoapIn" />
+      <wsdl:output message="tns:GetDefaultRouteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainName">
+      <wsdl:input message="tns:GetDomainNameSoapIn" />
+      <wsdl:output message="tns:GetDomainNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfDSave2">
+      <wsdl:input message="tns:WfDSave2SoapIn" />
+      <wsdl:output message="tns:WfDSave2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfDSave">
+      <wsdl:input message="tns:WfDSaveSoapIn" />
+      <wsdl:output message="tns:WfDSaveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfDLoad1">
+      <wsdl:input message="tns:WfDLoad1SoapIn" />
+      <wsdl:output message="tns:WfDLoad1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfDLoad2">
+      <wsdl:input message="tns:WfDLoad2SoapIn" />
+      <wsdl:output message="tns:WfDLoad2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfDLoad3">
+      <wsdl:input message="tns:WfDLoad3SoapIn" />
+      <wsdl:output message="tns:WfDLoad3SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfDDelete">
+      <wsdl:input message="tns:WfDDeleteSoapIn" />
+      <wsdl:output message="tns:WfDDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfDOneQue">
+      <wsdl:input message="tns:WfDOneQueSoapIn" />
+      <wsdl:output message="tns:WfDOneQueSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfDReadCheck">
+      <wsdl:input message="tns:WfDReadCheckSoapIn" />
+      <wsdl:output message="tns:WfDReadCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfIBQuery">
+      <wsdl:input message="tns:WfIBQuerySoapIn" />
+      <wsdl:output message="tns:WfIBQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfIBCount">
+      <wsdl:input message="tns:WfIBCountSoapIn" />
+      <wsdl:output message="tns:WfIBCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfMBQuery">
+      <wsdl:input message="tns:WfMBQuerySoapIn" />
+      <wsdl:output message="tns:WfMBQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfRBQuery">
+      <wsdl:input message="tns:WfRBQuerySoapIn" />
+      <wsdl:output message="tns:WfRBQuerySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfRBCount">
+      <wsdl:input message="tns:WfRBCountSoapIn" />
+      <wsdl:output message="tns:WfRBCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfDoCount">
+      <wsdl:input message="tns:WfDoCountSoapIn" />
+      <wsdl:output message="tns:WfDoCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WfRouteStep">
+      <wsdl:input message="tns:WfRouteStepSoapIn" />
+      <wsdl:output message="tns:WfRouteStepSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CanBeApprove">
+      <wsdl:input message="tns:CanBeApproveSoapIn" />
+      <wsdl:output message="tns:CanBeApproveSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="hasApproved">
+      <wsdl:input message="tns:hasApprovedSoapIn" />
+      <wsdl:output message="tns:hasApprovedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getApproveAll">
+      <wsdl:input message="tns:getApproveAllSoapIn" />
+      <wsdl:output message="tns:getApproveAllSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WorkFlowSoap" type="tns:WorkFlowSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WfSMGrid">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfSMGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfSMSave">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfSMSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfSMDdl">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfSMDdl" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfSMGetWfUse">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfSMGetWfUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRGrid">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfRGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRSave">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfRSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRLoad">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfRLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRItemGrid">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfRItemGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRItemGrid2">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfRItemGrid2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRDelete">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfRDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRPopup">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfRPopup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRPopup2">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfRPopup2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRGetMail">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfRGetMail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfPSLoad">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfPSLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfPSGrid">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfPSGrid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfPSGrid1">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfPSGrid1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultRoute">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/GetDefaultRoute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainName">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/GetDomainName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDSave2">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfDSave2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDSave">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfDSave" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDLoad1">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfDLoad1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDLoad2">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfDLoad2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDLoad3">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfDLoad3" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDDelete">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfDDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDOneQue">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfDOneQue" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDReadCheck">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfDReadCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfIBQuery">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfIBQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfIBCount">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfIBCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfMBQuery">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfMBQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRBQuery">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfRBQuery" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRBCount">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfRBCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDoCount">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfDoCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRouteStep">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/WfRouteStep" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanBeApprove">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/CanBeApprove" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hasApproved">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/hasApproved" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApproveAll">
+      <soap:operation soapAction="http://WorkFlow.UsgKorea.com/getApproveAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WorkFlowSoap12" type="tns:WorkFlowSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WfSMGrid">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfSMGrid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfSMSave">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfSMSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfSMDdl">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfSMDdl" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfSMGetWfUse">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfSMGetWfUse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRGrid">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfRGrid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRSave">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfRSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRLoad">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfRLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRItemGrid">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfRItemGrid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRItemGrid2">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfRItemGrid2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRDelete">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfRDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRPopup">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfRPopup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRPopup2">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfRPopup2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRGetMail">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfRGetMail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfPSLoad">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfPSLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfPSGrid">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfPSGrid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfPSGrid1">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfPSGrid1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDefaultRoute">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/GetDefaultRoute" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainName">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/GetDomainName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDSave2">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfDSave2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDSave">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfDSave" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDLoad1">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfDLoad1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDLoad2">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfDLoad2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDLoad3">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfDLoad3" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDDelete">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfDDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDOneQue">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfDOneQue" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDReadCheck">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfDReadCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfIBQuery">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfIBQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfIBCount">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfIBCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfMBQuery">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfMBQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRBQuery">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfRBQuery" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRBCount">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfRBCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfDoCount">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfDoCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WfRouteStep">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/WfRouteStep" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CanBeApprove">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/CanBeApprove" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="hasApproved">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/hasApproved" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getApproveAll">
+      <soap12:operation soapAction="http://WorkFlow.UsgKorea.com/getApproveAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WorkFlow">
+    <wsdl:port name="WorkFlowSoap" binding="tns:WorkFlowSoap">
+      <soap:address location="http://localhost/SmartPro/WorkFlow.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WorkFlowSoap12" binding="tns:WorkFlowSoap12">
+      <soap12:address location="http://localhost/SmartPro/WorkFlow.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

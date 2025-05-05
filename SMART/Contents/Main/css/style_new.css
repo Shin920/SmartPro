@@ -1,0 +1,639 @@
+﻿/*************************************************
+
+Publishing by EUREKACNS.
+Last modified 2021.07.07
+
+**************************************************/
+
+/* font-include */
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+@charset "utf-8";
+
+@-ms-viewport{width:device-width;}
+@-o-viewport{width:device-width;}
+@-moz-viewport{width:device-width;}
+@-webkit-viewport{width:device-width;}
+@viewport{width:device-width;}
+
+
+/* common */
+*{margin:0; padding:0; text-decoration: none;}
+/*.notosanskr{font-family: 'Noto Sans KR', sans-serif,'돋움',Dotum;}*/
+body{font-family: 'Noto Sans KR', sans-serif,'돋움',Dotum; 
+    height:100%;}
+
+button,fieldset,img{border:0}
+a,a:active,a:hover,a:visited{text-decoration:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:none;}
+ul,li{list-style:none;}
+address,caption,cite,code,dfn,em,var{font-style:normal;}
+table{border-width: 0; border-collapse:collapse; border-spacing:0;}
+.clearfix::after{content:""; display:block; clear:both;}
+.hide{display: none;}
+
+/*
+input{
+    width:236px;
+    height:60px;
+    padding:0 20px;    
+    border:1px solid #e5e5e5;
+    border-radius:3px;
+    color:#222;
+    font-size:20px;
+}
+*/
+
+select{
+    width:278px;
+    height:50px;
+    margin-bottom:3px;
+    padding:0 16px;    
+    border:1px solid #e5e5e5;
+    border-radius:3px;
+    color:#444;
+    font-size:16px;
+    cursor: pointer;
+}
+
+.dxeBase_PlasticBlue {
+    font: 12px Tahoma, Geneva, sans-serif;
+}
+
+ 
+/* guide style */
+.guide_title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+}
+
+.guide_title_exp {
+    font-size: 14px;
+    color: darkred;
+    font-weight: normal;
+    margin: 5px 0;
+}
+
+.guide_title_mid {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+}
+
+.guide_title_small {
+    font-size: 14px;
+    font-weight: normal;
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+.guide_box {
+    box-sizing: border-box;
+    position: relative;
+    /*background-color:#fff;*/
+    background-color: #f5f5f5;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+    width: 100%;
+    padding: 10px;
+}
+
+/* 1.input */
+input[type="submit" i] {
+    appearance: auto;
+    user-select: none;
+    white-space: pre;
+    align-items: flex-start;
+    text-align: center;
+    cursor: default;
+    color: -internal-light-dark(black, white);
+    background-color: -internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    box-sizing: border-box;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+input {
+    -webkit-writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: start;
+    appearance: auto;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+}
+
+
+
+
+
+.dxeTextBox_PlasticBlue {
+    background-color: White;
+    border: 1px solid #cccccc;
+    font: 12px Tahoma, Geneva, sans-serif;
+}
+
+
+.dxeFocused_PlasticBlue
+{
+    border: 1px solid #1356bc;
+}
+
+
+.dxeButtonEdit_PlasticBlue {
+    border: 1px Solid #ccc;
+    background-color: White;
+    font: 12px Tahoma, Geneva, sans-serif;
+}
+
+
+/* Disabled */
+.dxeDisabled_PlasticBlue,
+.dxeDisabled_PlasticBlue td.dxe,
+.dxeDisabled_PlasticBlue .dxeEditArea_PlasticBlue,
+.dxeDisabled_PlasticBlue .dxeMemoEditArea_PlasticBlue
+{
+    color: #cccccc;
+    cursor: default;
+}
+a.dxeDisabled_PlasticBlue, a.dxeDisabled_PlasticBlue:hover
+{
+    color: #cccccc;
+}
+.dxeButtonDisabled_PlasticBlue
+{
+    color: White;
+    background: #cccccc url('/SMART/DXR.axd?r=0_5092-3uJEm') repeat-x left top;
+    border-color: #ababab;
+    cursor: default;
+}
+
+
+
+
+.dxeMemo_PlasticBlue {
+    background-color: White;
+    border: 1px solid #ccc;
+    font: 12px Tahoma, Geneva, sans-serif;
+}
+
+
+.dxeButtonEditButton_PlasticBlue{background-image:linear-gradient(#4874c0 0%, #3965b0 10%,#365ea4 100%); border:1px Solid #294e92;}
+.dxeButtonEditButtonHover_PlasticBlue{background-image:linear-gradient(#2991fc 0%, #1184f9 10%,#097aed 100%); border:1px Solid #294e92;}
+.dxeButtonEditButtonPressed_PlasticBlue{background-image:linear-gradient(#29539a 0%, #2c569e 90%,#345ea7 100%); border:1px Solid #294e92;}
+
+/* 2.button */
+    /*기본버튼스타일*/
+.dxbButton_PlasticBlue
+{
+    color: #222222;
+    font: 12px Tahoma, Geneva, sans-serif;
+    border: 1px solid #97a0b0;
+    background: #ffffff none;
+    background-image: linear-gradient(#ffffff 25%, #eaecee);
+    border-radius: 3px;
+    padding: 1px;
+}
+.dxbButtonHover_PlasticBlue
+{
+    color: #222222;
+    border-color:#717d91;
+    background: #ffffff none;
+    background-image: linear-gradient(#f7fafd  25%, #e3ebf5);
+}
+.dxbButtonChecked_PlasticBlue
+{
+    color: #2d4e73;
+    border-color:#5a7da6;
+    background: #d6e2f2 none;
+}
+.dxbButtonPressed_PlasticBlue
+{
+    color: #222222;
+    border-color:#717d91;
+    background: #a7bcd4 none;
+    background-image: linear-gradient(#dae5f2  25%, #edf4fc);
+}
+
+.dxbDisabled_PlasticBlue
+{
+    color: #999;
+    border-color:#ccc;
+    background: #ddd none;
+    cursor: default;
+}
+
+
+    /* 저장 아이콘 */
+.dxIcon_actions_save_16x16devav{
+    background-position:-32px -16px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+.dxIcon_actions_save_16x16devav_disabled{
+    background-position:-32px -32px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+    /* 신규 아이콘 */
+.dxIcon_actions_new_16x16office2013{
+    background-position:-48px -16px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+.dxIcon_actions_new_16x16office2013_disabled{
+    background-position:-48px -32px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+    /* 삭제 아이콘 */
+.dxIcon_edit_delete_16x16{
+    background-position:-16px -16px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+.dxIcon_edit_delete_16x16_disabled{
+    background-position:-16px -32px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+    /* 닫기 아이콘 */
+.dxIcon_richedit_closeheaderandfooter_16x16{
+    background-position:-64px -48px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+.dxIcon_richedit_closeheaderandfooter_16x16_disabled{
+    background-position:-64px -64px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+    /* 조회 및 검색 아이콘 */
+.dxIcon_actions_search_16x16devav{
+    background-position:0 -16px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+.dxIcon_actions_search_16x16devav_disabled{
+    background-position:0 -32px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+    /* 상세보기 아이콘 */
+.dxIcon_dashboards_enablesearch_svg_gray_16x16 {
+    background-position: -48px -48px;
+    background-size: auto;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+.dxIcon_dashboards_enablesearch_svg_gray_16x16_disabled{
+    background-position:-48px -64px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+    /* 수정 아이콘 */
+.icon_update{
+    background-position:-64px -16px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+.icon_update_disabled{
+    background-position:-64px -32px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+    /* 복사 아이콘 */
+.dxIcon_edit_copy_16x16office2013{
+    background-position:-80px -16px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+.dxIcon_edit_copy_16x16office2013_disabled{
+    background-position:-80px -32px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+    /* 엑셀 아이콘 */
+.dxIcon_export_exporttoxls_16x16office2013{
+    background-position:-96px -16px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+.dxIcon_export_exporttoxls_16x16office2013_disabled{
+    background-position:-96px -32px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+    /* 그룹등록 아이콘 */
+.dxIcon_actions_addfile_16x16office2013{
+    background-position:-96px -48px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+.dxIcon_actions_addfile_16x16office2013_disabled{
+    background-position:-96px -64px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+    /* 업로드 아이콘 */
+.dxIcon_actions_upload_16x16{
+    background-position:-32px -48px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+.dxIcon_actions_upload_16x16_disabled{
+    background-position:-32px -64px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+    /* 다운로드 아이콘 */
+.dxIcon_actions_download_16x16office2013{
+    background-position:-16px -48px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+.dxIcon_actions_download_16x16office2013_disabled{
+    background-position:-16px -64px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: 16px;
+    height: 16px;
+}
+
+/* 03.table */
+
+    /*테이블 상단 컬러*/
+.smart_table_head {
+    height: 3px;
+    background-color: #4d73af;
+    width: 100%;
+}
+
+    /*테이블 컬러*/
+.smart_table_default {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+    width: 100%;
+}
+.smart_table_th_center {
+    border: 1px solid #dfe2e5;
+    background: aliceblue;
+    padding: 1px 5px 1px 5px;
+}
+
+.smart_table_td_default {
+    border: 1px solid #dfe2e5;
+    background: #fff;
+    padding: 2px 5px 2px 5px;
+    text-align: left;
+}
+
+
+
+
+/* 라디오 버튼 */
+.dxEditors_edtRadioButtonUnchecked_PlasticBlue {
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: 0 0;
+    width: 15px;
+    height: 15px;
+}
+.dxEditors_edtRadioButtonChecked_PlasticBlue {
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: -16px 0;
+    width: 15px;
+    height: 15px;
+}
+
+.dxEditors_edtRadioButtonUncheckedDisabled_PlasticBlue{ 
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: -32px 0;
+    width: 15px;
+    height: 15px;
+}
+
+.dxEditors_edtRadioButtonCheckedDisabled_PlasticBlue { 
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: -48px 0;
+    width: 15px;
+    height: 15px;
+}
+
+/* 체크박스 이미지*/
+.dxWeb_edtCheckBoxUnchecked_PlasticBlue {
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: -64px 0;
+    width: 15px;
+    height: 15px;
+}
+.dxWeb_edtCheckBoxchecked_PlasticBlue{
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: -80px 0;
+    width: 15px;
+    height: 15px;
+}
+
+
+.dxWeb_edtCheckBoxUncheckedDisabled_PlasticBlue{   
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: -96px 0;
+    width: 15px;
+    height: 15px;
+}
+
+
+.dxWeb_edtCheckBoxCheckedDisabled_PlasticBlue {
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: -112px 0;
+    width: 15px;
+    height: 15px;
+}
+
+
+/* 4. 이미지 */
+.img_box50{
+border:1px solid #ccc;
+    height:50px;
+    width:50px;
+}
+
+/* 5. 블릿 */
+.title {
+    text-decoration: none;
+    color: #002d65;
+    height: 12px;
+    font-size:14px;
+    letter-spacing: -1px;
+    padding: 3px 10px 3px 15px;
+    background: url(../images/icon_title.png) no-repeat 0 50%;
+    font-weight: bold;
+}
+
+/* 6. 텍스트 */
+
+
+.txt_essential{
+    color:#1356a9;
+    font-weight:bold;
+    padding-left:17px;
+    background:url(../images/icon_essential.png) no-repeat 0 0 ;
+}
+.txt_essential_check{
+    color:#1356a9;
+    font-weight:bold;
+    padding-left:17px;
+    background:url(../images/icon_essential.png) no-repeat 0 0 ;
+    background-position: 0 -15px;
+}
+
+.txt_red{
+    color:#e62d46;
+    font-weight:bold;
+}
+.txt_green{
+    color:#22825d;
+    font-weight:bold;
+}
+.txt_blue{
+    color:#1356a9;
+    font-weight:bold;
+}
+
+.txt_big{
+    font-size:16px;
+}
+
+/* 팝업 닫기버튼 */
+.CloseButton {
+    background-position: -64px -48px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}
+
+/* 팝업 선택버튼 */
+.ChoiceButton {
+    background-position: -128px -16px;
+    background-image: url(../images/icon_sprite.png);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+}

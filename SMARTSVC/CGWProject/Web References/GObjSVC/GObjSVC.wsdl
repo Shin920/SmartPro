@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://GObjSVC.UsgKorea.com" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://GObjSVC.UsgKorea.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://GObjSVC.UsgKorea.com">
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassWd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClientID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCertDigest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objConditions" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClientID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objConditions" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SSOLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SSOLoginResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginEncryptedPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strUserID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strPassWd" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strSiteCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClientID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCertDigest" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strKey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strUserIP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="objConditions" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginEncryptedPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginEncryptedPasswordResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurTime">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strClientID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurTimeResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormPath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strLangID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFormPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFormPathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExchRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="ExchGubun" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strCurrCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExchRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ExchRateResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadStyleSheet">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strObjID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGridSelColor" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strClientID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadStyleSheetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadStyleSheetResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strGridSelColor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWfUse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strFormID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWfUseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetWfUseResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWfCount">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iIBCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iRBCount" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWfCountResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iIBCount" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="iRBCount" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadFormSecurity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GDObj" type="tns:ArrayOfAnyType" />
+            <s:element minOccurs="0" maxOccurs="1" name="strModuleInitial" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadFormSecurityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadFormSecurityResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="SSOLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:SSOLogin" />
+  </wsdl:message>
+  <wsdl:message name="SSOLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:SSOLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoginEncryptedPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:LoginEncryptedPassword" />
+  </wsdl:message>
+  <wsdl:message name="LoginEncryptedPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginEncryptedPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurTime" />
+  </wsdl:message>
+  <wsdl:message name="GetCurTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFormPathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFormPath" />
+  </wsdl:message>
+  <wsdl:message name="GetFormPathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFormPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExchRateSoapIn">
+    <wsdl:part name="parameters" element="tns:ExchRate" />
+  </wsdl:message>
+  <wsdl:message name="ExchRateSoapOut">
+    <wsdl:part name="parameters" element="tns:ExchRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadStyleSheetSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadStyleSheet" />
+  </wsdl:message>
+  <wsdl:message name="LoadStyleSheetSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadStyleSheetResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWfUseSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWfUse" />
+  </wsdl:message>
+  <wsdl:message name="GetWfUseSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWfUseResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWfCountSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWfCount" />
+  </wsdl:message>
+  <wsdl:message name="GetWfCountSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWfCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadFormSecuritySoapIn">
+    <wsdl:part name="parameters" element="tns:LoadFormSecurity" />
+  </wsdl:message>
+  <wsdl:message name="LoadFormSecuritySoapOut">
+    <wsdl:part name="parameters" element="tns:LoadFormSecurityResponse" />
+  </wsdl:message>
+  <wsdl:portType name="GObjSVCSoap">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SSOLogin">
+      <wsdl:input message="tns:SSOLoginSoapIn" />
+      <wsdl:output message="tns:SSOLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoginEncryptedPassword">
+      <wsdl:input message="tns:LoginEncryptedPasswordSoapIn" />
+      <wsdl:output message="tns:LoginEncryptedPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurTime">
+      <wsdl:input message="tns:GetCurTimeSoapIn" />
+      <wsdl:output message="tns:GetCurTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormPath">
+      <wsdl:input message="tns:GetFormPathSoapIn" />
+      <wsdl:output message="tns:GetFormPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExchRate">
+      <wsdl:input message="tns:ExchRateSoapIn" />
+      <wsdl:output message="tns:ExchRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadStyleSheet">
+      <wsdl:input message="tns:LoadStyleSheetSoapIn" />
+      <wsdl:output message="tns:LoadStyleSheetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWfUse">
+      <wsdl:input message="tns:GetWfUseSoapIn" />
+      <wsdl:output message="tns:GetWfUseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWfCount">
+      <wsdl:input message="tns:GetWfCountSoapIn" />
+      <wsdl:output message="tns:GetWfCountSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadFormSecurity">
+      <wsdl:input message="tns:LoadFormSecuritySoapIn" />
+      <wsdl:output message="tns:LoadFormSecuritySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="GObjSVCSoap" type="tns:GObjSVCSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://GObjSVC.UsgKorea.com/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOLogin">
+      <soap:operation soapAction="http://GObjSVC.UsgKorea.com/SSOLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginEncryptedPassword">
+      <soap:operation soapAction="http://GObjSVC.UsgKorea.com/LoginEncryptedPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurTime">
+      <soap:operation soapAction="http://GObjSVC.UsgKorea.com/GetCurTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormPath">
+      <soap:operation soapAction="http://GObjSVC.UsgKorea.com/GetFormPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchRate">
+      <soap:operation soapAction="http://GObjSVC.UsgKorea.com/ExchRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadStyleSheet">
+      <soap:operation soapAction="http://GObjSVC.UsgKorea.com/LoadStyleSheet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWfUse">
+      <soap:operation soapAction="http://GObjSVC.UsgKorea.com/GetWfUse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWfCount">
+      <soap:operation soapAction="http://GObjSVC.UsgKorea.com/GetWfCount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadFormSecurity">
+      <soap:operation soapAction="http://GObjSVC.UsgKorea.com/LoadFormSecurity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="GObjSVCSoap12" type="tns:GObjSVCSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://GObjSVC.UsgKorea.com/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SSOLogin">
+      <soap12:operation soapAction="http://GObjSVC.UsgKorea.com/SSOLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoginEncryptedPassword">
+      <soap12:operation soapAction="http://GObjSVC.UsgKorea.com/LoginEncryptedPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurTime">
+      <soap12:operation soapAction="http://GObjSVC.UsgKorea.com/GetCurTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFormPath">
+      <soap12:operation soapAction="http://GObjSVC.UsgKorea.com/GetFormPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExchRate">
+      <soap12:operation soapAction="http://GObjSVC.UsgKorea.com/ExchRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadStyleSheet">
+      <soap12:operation soapAction="http://GObjSVC.UsgKorea.com/LoadStyleSheet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWfUse">
+      <soap12:operation soapAction="http://GObjSVC.UsgKorea.com/GetWfUse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWfCount">
+      <soap12:operation soapAction="http://GObjSVC.UsgKorea.com/GetWfCount" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadFormSecurity">
+      <soap12:operation soapAction="http://GObjSVC.UsgKorea.com/LoadFormSecurity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GObjSVC">
+    <wsdl:port name="GObjSVCSoap" binding="tns:GObjSVCSoap">
+      <soap:address location="http://localhost/SINT/GObjSVC.asmx" />
+    </wsdl:port>
+    <wsdl:port name="GObjSVCSoap12" binding="tns:GObjSVCSoap12">
+      <soap12:address location="http://localhost/SINT/GObjSVC.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

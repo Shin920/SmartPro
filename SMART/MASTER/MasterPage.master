@@ -1,0 +1,256 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MASTER_MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Smart Pro</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="shortcut icon" href="/SmartPro/Contents/Login/images/ERP.ico" />
+
+    <link rel="stylesheet" type="text/css" href="/SmartPro/Contents/Main/css/PageStyle.css" />
+    <link rel="stylesheet" type="text/css" href="/SmartPro/Contents/Main/css/style_new.css" />
+
+    <script type="text/javascript" src="/SmartPro/Common/Script/CFL.js"></script>
+    <script type="text/javascript" src="/SmartPro/Contents/Script/CFL.js"></script>
+    <script type="text/javascript" src="/SmartPro/Contents/Script/PageScript.js"></script>
+    <script type="text/javascript" src="/SmartPro/Contents/Script/PageUtil.js"></script>
+    <script type="text/javascript" src="/SmartPro/Contents/Script/jquery-3.6.0.js"></script>
+
+</head>
+<body onload="mastOnload();" style=" margin:5px 5px 0px 5px; overflow: hidden;">
+
+    <script type="text/javascript">
+
+        function mastJQUpdateFooterTop() {
+
+            var position = $(window).scrollTop();
+            var h = $(window).height();
+
+            if (document.documentElement.scrollWidth >= document.documentElement.clientWidth) {
+                $("#mastDivPageFooter").css('top', (h + position - 46) + 'px');   // popup
+            }
+            else {
+                $("#mastDivPageFooter").css('top', (h + position - 23) + 'px');   // popup
+            }
+
+            if (v_mast_statusbar_visible == true) {
+                $("#mastDivPageFooter").css('display', '');
+            }
+            else {
+                $("#mastDivPageFooter").css('display', 'none');
+            }
+
+            //mastPageFooterErr("error messageb 한글표시");
+        }
+
+        // event 등록
+        $(window).resize(mastJQUpdateFooterTop);
+        $(window).scroll(mastJQUpdateFooterTop);
+
+
+        // 텍스트 area나 텍스트 박스일 경우는 백스페이스 허용하고 그 외에 밖에서는 백스페이스 예외처리    
+        // devExpress콤보박스 백스패이스 금지 예외처리
+        document.onkeydown = function () {
+
+            if (event.keyCode == 8) {
+                if (event.srcElement.type == "text" || event.srcElement.type == "textarea" || event.srcElement.type == "password") {
+
+                    try {
+                        if (event.srcElement.readOnly == true) {
+                            return false;
+                        } else {
+                            return true;
+                        }
+                    } catch (e) {
+                        return true;
+                    }
+
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        function mastOnload() {
+
+            setTimeout(mastJQUpdateFooterTop, 500);
+
+            // 페이지마다 init 함수가 존재하면 실행함.
+            if (typeof init == 'function') { init(); }
+
+            //버튼 ToolTip 지정
+            var btnNew = document.getElementById("ctl00_PageContent_btnNew");
+            if (btnNew != null) {
+                btnNew.title = 'Alt+1';
+            }
+            var btnSave = document.getElementById("ctl00_PageContent_btnSave");
+            if (btnSave != null) {
+                btnSave.title = 'Alt+2';
+            }
+            var btnDelete = document.getElementById("ctl00_PageContent_btnDelete");
+            if (btnDelete != null) {
+                btnDelete.title = 'Alt+3';
+            }
+            var btnSearch = document.getElementById("ctl00_PageContent_btnSearch");
+            if (btnSearch != null) {
+                btnSearch.title = 'Alt+Q';
+            }
+        }  
+      
+        //페이지 단축키 지정
+        document.addEventListener('keydown', function (e) {
+            //ascii dec 값으로 받음
+            if (e.altKey && e.keyCode === 49) { //Alt + 1
+                if (btnNew.clientEnabled) { //버튼 Enalbled 체크
+                    if(typeof btnNew_Click() == 'function') {
+                        btnNew_Click();
+                    }
+                }
+            }
+
+            if (e.altKey && e.keyCode === 50) { //Alt + 2
+                if (btnSave.clientEnabled) {
+                    if (typeof btnSave_Click() == 'function') {
+                        btnSave_Click();
+                    }
+                }
+            }
+
+            if (e.altKey && e.keyCode === 51) { //Alt + 3
+                if (btnDelete.clientEnabled) {
+                    if(typeof btnDelete_Click() == 'function') {
+                        btnDelete_Click();
+                    }
+                }
+            }
+
+            if (e.altKey && e.keyCode === 81) { //Alt + Q
+                if (btnSearch.clientEnabled) {
+                    if(typeof btnSearch_Click() == 'function') {
+                        btnSearch_Click();
+                    }
+                }
+            }
+        });
+
+        
+        //vSheetDiv : 엑셀 Sheet 분할 사용 (Default : true)
+        function ParsePrintParam(vRID, vParam, vFileNM, vSheetDiv) {
+
+            txtMasterRID.SetText(vRID);
+            txtPrintParam.SetText(vParam);
+            txtDownFileName.SetText(vFileNM);
+
+            if (vSheetDiv == false) {
+                txtSheetDiv.SetText("N");
+            } else {
+                txtSheetDiv.SetText("Y");
+            }
+
+            txtMasterData1.SetText(v_mast_pop_data1);
+            txtMasterData2.SetText(v_mast_pop_data2);
+            txtMasterData3.SetText(v_mast_pop_data3);
+            txtMasterData4.SetText(v_mast_pop_data4);
+            txtMasterData5.SetText(v_mast_pop_data5);
+            txtMasterData6.SetText(v_mast_pop_data6);
+            txtMasterData7.SetText(v_mast_pop_data7);
+            txtMasterData8.SetText(v_mast_pop_data8);
+            txtMasterData9.SetText(v_mast_pop_data9);
+            txtMasterData10.SetText(v_mast_pop_data10);
+            txtMasterData11.SetText(v_mast_pop_data11);
+            txtMasterData12.SetText(v_mast_pop_data12);
+            txtMasterData13.SetText(v_mast_pop_data13);
+            txtMasterData14.SetText(v_mast_pop_data14);
+            txtMasterData15.SetText(v_mast_pop_data15);
+
+            btnExcelFormDown.DoClick();
+        }
+        
+
+        // - 우측마우스 누름 방지 - // 
+        function click()
+        {
+            // 개발자 Option처리 기능 확인 필요...함 (?)
+            if((event. button==2) || (event.button==3))
+            {
+                //if (txtLoginUserID.GetText() == "SPADMIN") {
+                if (txtLoginUserID.GetText() != "SPADMIN") {
+                    alert("마우스 오른쪽 버튼은 사용 할 수 없습니다.");
+                    return;
+                }
+            }
+        }
+
+        document.onmousedown = click;
+
+<%--    우측마우스 누름 원천 봉쇄
+    <body oncontextmenu="return false" >--%>
+
+    </script>
+
+    <form id="form1" runat="server">
+
+
+        <%-- 해당 컨트롤은 화면을 표시해주는 영역임 --%>
+        <asp:ContentPlaceHolder id="PageContent" runat="server" />
+
+        <%-- 화면 하단 여백, 상태바 영역 확보 --%>
+        <div style="height:25px;" ></div>
+
+        <%-- 팝업 컨트롤 (팝업창) --%>
+        <dx:ASPxPopupControl ID="mastPopForm" ClientInstanceName="mastPopForm" runat="server" 
+            PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" AllowResize="true" 
+            AllowDragging="true" ShowCloseButton="true" CloseAction="CloseButton"
+            Modal="True" HeaderText="Code Select" AppearAfter="0">
+            <ClientSideEvents Closing="function(s, e) {  }"
+                    CloseUp="function(s, e) { mastPopForm.SetContentUrl('about:blank');	}"
+                    PopUp="function(s, e) {  }"  >
+            </ClientSideEvents>    
+        </dx:ASPxPopupControl>
+
+
+        <%-- 코드 조회 콜백 --%>
+        <dx:ASPxCallback ID="mastCallback" runat="server" ClientInstanceName="mastCallback" OnCallback="mastCallback_Callback">
+            <ClientSideEvents CallbackComplete="mastOnCallbackComplete" />
+        </dx:ASPxCallback>
+
+
+        <%-- 로딩 판넬 --%>
+        <dx:ASPxLoadingPanel ID="mastLoadingPanel" runat="server" ClientInstanceName="mastLoadingPanel" Modal="True"></dx:ASPxLoadingPanel>
+
+        <!-- 상태바 -->
+        <div id="mastDivPageFooter" style="display:none; position:absolute; opacity:0.6; top:0px; height:27px;width:100%; text-align:left;margin-left:-5px; margin-bottom:0px; background-color:#d3d3d3; clear:both">
+            <dx:ASPxLabel ID="mastPageFooterLabel" ClientInstanceName="mastPageFooterLabel" runat="server" Text="" ></dx:ASPxLabel>
+        </div>
+
+        
+        <dx:ASPxButton ID="btnExcelFormDown" ClientInstanceName="btnExcelFormDown" runat="server" ClientVisible="false" OnClick="btnExcelFormDown_Click" ToolTip="false" UseSubmitBehavior="false">
+        </dx:ASPxButton>
+        
+        <dx:ASPxTextBox ID="txtMasterData1" ClientInstanceName="txtMasterData1" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData2" ClientInstanceName="txtMasterData2" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData3" ClientInstanceName="txtMasterData3" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData4" ClientInstanceName="txtMasterData4" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData5" ClientInstanceName="txtMasterData5" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData6" ClientInstanceName="txtMasterData6" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData7" ClientInstanceName="txtMasterData7" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData8" ClientInstanceName="txtMasterData8" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData9" ClientInstanceName="txtMasterData9" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData10" ClientInstanceName="txtMasterData10" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData11" ClientInstanceName="txtMasterData11" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData12" ClientInstanceName="txtMasterData12" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData13" ClientInstanceName="txtMasterData13" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData14" ClientInstanceName="txtMasterData14" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterData15" ClientInstanceName="txtMasterData15" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtMasterRID" ClientInstanceName="txtMasterRID" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtPrintParam" ClientInstanceName="txtPrintParam" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtDownFileName" ClientInstanceName="txtDownFileName" runat="server" ClientVisible="false" />
+        <dx:ASPxTextBox ID="txtSheetDiv" ClientInstanceName="txtSheetDiv" runat="server" ClientVisible="false" />
+
+        <dx:ASPxTextBox ID="txtLoginUserID" ClientInstanceName="txtLoginUserID" runat="server" ClientVisible="false"></dx:ASPxTextBox>
+
+    </form>
+</body>
+</html>

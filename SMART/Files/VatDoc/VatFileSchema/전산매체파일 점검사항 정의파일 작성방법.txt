@@ -1,0 +1,51 @@
+<!--
+Header  length : 레코드 전체 길이, descr=레코드 종류, ver=스키마 정보 작성시 기준이 된 국세청 문서 발행월
+Column position =해당 정보의 시작위치 
+       length   =해당 정보의 위치  
+       type=''  =해당 정보의 타입(Char(문자),NumChar(문자인데 숫자로 변환가능),Num(숫자),Date(날짜형:yyyyMMdd))        
+       allowMinus=해당정보가 숫자인 경우 -값을 허용하는지 여부(Y,N) 
+       allowNull=Null 허용여부 (Y,N)
+	   allowDecimal = 정수값 허용 하는지 여부(기본값은 허용 YN)
+       ColID=컬럼 스키마 구별자= 모든 스키마 컬럼이 가지고 있어야 한다
+       descr= 설명(레코더 정보 한글명 및 번호)
+       isMinusDefineColID= 해당 컬럼값이 음수값인지 결정하는 컬럼이 있는 경우 그 컬럼의 CalID를 가리킨다
+       Fix 값은 해당 Column 노드의 자식 노드 중에 Fix 노드가 있는지 여부를 가지고 판단
+       
+       ★ 작성 예시
+       합계등 계산식이 있을때는 
+       
+        <xml>
+	        <Header  length='600' descr='일반 부가가치세 신고서' ver='201609'/>
+	        <Columns>
+                <Column ColID='1234' position='160' length='13' type='Char' allowMinus='' CalID='test' descr='매출예정누락합계세액(14)' isMinusDefineColID=''>
+                    <Calculate> :계산식 정의
+                        <Minus id= [문서ID_1.컬럼ID_1] Column='' > 
+							: id에 해당하는 계산식_컬럼_정의식은 문서ID_1에 해당하는 도큐먼트 스키마 정의파일에서 
+							  Column에 해당하는 ColID값을 가진 실제레코드 데이터(각 레코드 데이터 파일 기준:자기자신이 기준)가 InnerText에 해당하는 값(표지값:복수정의 가능)을 가지면 마이너스
+
+                            - 표지값1,표지값1,표지값1...
+                        </Minus>						
+						[문서ID1.컬럼ID_1] + [문서ID_2.컬럼ID_2] * 10 에서 [문서ID.컬럼ID] 는 계산식_컬럼_정의식 이라고 부른다
+                    </Calculate>                    
+                </Column> 
+				<Column allowNull='N' position='878'    length='13' type='Num' allowMinus='N'  ColID='(30)' descr='과세 표준명세 수입금액제외금액'>
+					<Calculate>
+						<Match id='[15I103200.(7)]' Column='(3)'> : 어떤  계산식_컬럼_정의식에 해당하는 값을 계산할때 특정 컬럼의 조건에 따라 계산식에 추가 여부가 결정되는 경우에 사용(전체 - 부분으로 체크하면 -값이 나올 우려 있기 때문에)
+							02,03
+						</Match>
+						[15I103200.(7)]
+					</Calculate>
+				</Column>
+				<Column allowNull='Y' position='964'    length='2'  type='Char' allowMinus=''  descr='환급 구분 코드' >
+					<Fix>10</Fix>	:고정값 있는 경우
+					<Fix>20</Fix>
+					<Fix>30</Fix>
+					<Fix>40</Fix>
+					<Fix>41</Fix>
+					<Fix>42</Fix>
+					<Fix>43</Fix>
+					<Fix>ZZ</Fix>
+				</Column>								             
+	        </Columns>
+        </xml> 
+-->

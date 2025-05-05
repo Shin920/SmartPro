@@ -1,0 +1,200 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterRoot.master.cs" Inherits="MASTER_MasterRoot" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <link rel="shortcut icon" href="/SmartPro/Contents/Login/images/ERP.ico" />
+
+    <link href="/SmartPro/Contents/Main/css/main_green.css" rel="stylesheet" />
+    <script type="text/javascript" src="/SmartPro/Contents/Script/jquery-3.6.0.js"></script>
+
+    <script type="text/javascript">
+
+        /* 로그인 로그아웃 후 뒤로가기 안되게 방지 */
+        window.history.forward();
+        function pageOnload() {
+            window.history.forward();
+            // 페이지마다 init 함수가 존재하면 실행함.
+            if (typeof init == 'function') { init(); }
+        }
+
+        function menuItemClick(s, e) {
+
+            var sText = e.item.GetText();
+            var sName = e.item.name;
+
+            //MasterMain 페이지에 있는 함수 실행.
+            TopMenuClick(sText, sName);
+        }
+
+        //
+        function btnFindFormClick() {
+            var sInfo = txtFindForm.GetText();
+            if (sInfo == "") {
+                alert("화면 ID나 화면명을 입력하여 주십시오.");
+                return;
+            }
+
+            hidField.Clear();
+            hidField.Set("job", "F");
+            callBackPanel.
+                Callback();
+
+
+        }
+
+        function panelEndCallbackFind() {
+
+            var job = hidField.Get("job");
+            var ret = hidField.Get("status");
+            var msg = hidField.Get("msg");
+            var cnt = hidField.Get("cnt");
+
+            if (job == "F") {
+                if (ret == "N") {
+                    alert(msg);
+                }
+                else if (cnt > 1) {
+                    var sInfo = txtFindForm.GetText();
+
+                    // 팝업을 가운데 위치시키기 위해 아래와 같이 값 구하기
+                    var sLeft = Math.ceil((window.screen.width - 300) / 2);
+                    var sTop = Math.ceil((window.screen.width - 300) / 5);
+
+                    window.open("/SmartPro/glb/Forms/FindForms.aspx?Action=Load&Info=" + sInfo, "찾기", "width=450,height=300,menubar=no,status=no,toolbar=no,scrollbars=no,left=" + sLeft + ",top=" + sTop);
+                }
+                else if (cnt == 1) {
+
+                    var sURL = hidField.Get("FORMURL");
+                    var sTitle = hidField.Get("OBJNAME");
+                    var sFormID = hidField.Get("FORMID");
+                    var sObjID = hidField.Get("OBJID");
+                    var sParentObj = hidField.Get("PARENTOBJ");
+
+                    addTabMenu(sFormID, sTitle, sURL, sFormID);
+                }
+            }
+        }
+
+
+        //고객사 로고 클릭 발생되는 이벤트 
+        function TopLogoClick() {
+
+            if (!confirm("전체 화면을 초기화 하시겠습니까?")) {
+                return;
+            }
+
+            //새로고침
+            window.location.reload();
+        }
+
+        //정보수정 클릭 이벤트
+        function TopInfoEdit() {
+            // 팝업을 가운데 위치시키기 위해 아래와 같이 값 구하기
+            var sLeft = Math.ceil((window.screen.width - 300) / 2);
+            var sTop = Math.ceil((window.screen.width - 300) / 5);
+
+            window.open("/SmartPro/MNG/OM/UserMenu/OM009/OM009.aspx", "기본정보", "width=900,height=250,menubar=no,status=no,toolbar=no,scrollbars=no,left=" + sLeft + ",top=" + sTop);
+        }
+
+        window.addEventListener('beforeunload', (event) => {
+            event.preventDefault();
+            //event.returnValue = '';
+        });
+
+        function pageClose() {
+            hidField.Clear();
+            hidField.Set("job", "Logout");
+            callBackPanel.PerformCallback();
+        }
+
+    </script>
+
+</head>
+<body onload="pageOnload();" onbeforeunload="pageClose();">
+    <form id="form1" runat="server">
+
+        <dx:ASPxSplitter ID="rootSplitter" ClientInstanceName="rootSplitter" runat="server" FullscreenMode="true" SeparatorVisible="false"
+            AllowResize="false" Orientation="Vertical" Width="100%" Height="100%">
+            <Styles>
+                <Pane Border-BorderWidth="0px">
+                    <Paddings Padding="0px" />
+                </Pane>
+            </Styles>
+            <Panes>
+                <dx:SplitterPane Name="splitTop" Size="51px" MinSize="51px">
+                    <PaneStyle CssClass="topBackground">
+                        <BorderBottom BorderWidth="1px" />
+                    </PaneStyle>
+                    <ContentCollection>
+                        <dx:SplitterContentControl ID="splitterHeader" runat="server">
+
+                            <table class="topInfo clearfix">
+                                <tr>
+                                    <td class="topLogo" align="Center">
+                                        <a href="javascript:TopLogoClick();"><img src="<%=m_strComLogo%>"></a>
+                                    </td>
+                                    <td class="topLeft">
+                                        <dx:ASPxLabel ID="lblUserName" ClientInstanceName="lblUserName" runat="server" Wrap="False" Text="Administrator"></dx:ASPxLabel><span>님</span>
+                                        <a href="javascript:TopInfoEdit();" class="topButton">정보수정</a>
+                                        <dx:ASPxLabel ID="lblSiteName" ClientInstanceName="lblSiteName" runat="server" Wrap="False" Text="보고신약" CssClass="companyType"></dx:ASPxLabel>
+                                    </td>
+                                    <td class="topRight">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <dx:ASPxTextBox ID="txtFindForm" ClientInstanceName="txtFindForm" runat="server" Native="true" CssClass="topInput">
+                                                        <ClientSideEvents KeyPress="function(s, e){
+                                                                                        if (e.htmlEvent.keyCode == 13) {
+                                                                                            ASPxClientUtils.PreventEventAndBubble(e.htmlEvent); 
+                                                                                            btnFindFormClick(); } }" />
+                                                    </dx:ASPxTextBox>
+                                                    <a href="javascript:btnFindFormClick();" title="검색" class="topSearch">
+                                                        <img src="../Contents/Main/images/ico_search.png">
+                                                    </a>
+                                                </td>
+                                                <td class="topLogout">
+                                                    <asp:LoginStatus ID="loginStatus2" runat="server" LogoutAction="Redirect" ToolTip="로그아웃"
+                                                        LogoutImageUrl="../Contents/Main/images/ico_logout.png" LogoutPageUrl="~/glb/Forms/Logout.aspx" />
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </dx:SplitterContentControl>
+                    </ContentCollection>
+                </dx:SplitterPane>
+
+                <dx:SplitterPane Name="splitRoot" MinSize="375px">
+                    <PaneStyle CssClass=""></PaneStyle>
+                    <ContentCollection>
+                        <dx:SplitterContentControl ID="splitterContent" runat="server" SupportsDisabledAttribute="True">
+                            <asp:ContentPlaceHolder ID="RootContent" runat="server" />
+                        </dx:SplitterContentControl>
+                    </ContentCollection>
+                </dx:SplitterPane>
+            </Panes>
+        </dx:ASPxSplitter>
+
+
+
+        <%-- 데이터 조회 콜백 판넬 (Ajax) --%>
+        <dx:ASPxCallbackPanel ID="callBackPanel" ClientInstanceName="callBackPanel" OnCallback="callBackPanel_Callback" runat="server">
+            <ClientSideEvents EndCallback="function(s, e) { panelEndCallbackFind(); } " />
+            <PanelCollection>
+                <dx:PanelContent>
+
+                    <dx:ASPxHiddenField ID="hidField" ClientInstanceName="hidField" runat="server"></dx:ASPxHiddenField>
+
+                </dx:PanelContent>
+            </PanelCollection>
+        </dx:ASPxCallbackPanel>
+
+    </form>
+</body>
+</html>

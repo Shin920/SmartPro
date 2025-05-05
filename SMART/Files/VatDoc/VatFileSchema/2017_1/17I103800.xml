@@ -1,0 +1,21 @@
+﻿<xml>
+	<Header  length='200' descr='건물등 감가상각자산 취득 명세서' ver='201609'/>
+	<Columns>
+        <Column ColID='(3)'  allowNull='N' position='9'   length='11' type='Num' allowDecimal=''    allowMinus='N'  descr='건수 합계 고정자산' />
+        <Column ColID='(4)'  allowNull='N' position='20'  length='13' type='Num' allowDecimal='N'    allowMinus=''  descr='공급가액 합계 고정자산' />
+        <Column ColID='(5)'  allowNull='N' position='33'  length='13' type='Num' allowDecimal='N'    allowMinus=''  descr='세액 합계 고정자산' />
+        <Column ColID='(6)'  allowNull='N' position='46'  length='11' type='Num' allowDecimal=''    allowMinus='N'  descr='건수 건물 구축물' />
+        <Column ColID='(7)'  allowNull='N' position='57'  length='13' type='Num' allowDecimal='N'    allowMinus=''  descr='공급가액 건물 구축물' />
+        <Column ColID='(8)'  allowNull='N' position='70'  length='13' type='Num' allowDecimal='N'    allowMinus=''  descr='세액 건물 구축물' />
+        <Column ColID='(9)'  allowNull='N' position='83'  length='11' type='Num' allowDecimal=''    allowMinus='N'  descr='건수 기계장치' />
+        <Column ColID='(10)' allowNull='N' position='94'  length='13' type='Num' allowDecimal='N'    allowMinus=''  descr='공급가액 기계장치' />
+        <Column ColID='(11)' allowNull='N' position='107' length='13' type='Num' allowDecimal='N'    allowMinus=''  descr='세액 기계장치' />
+        <Column ColID='(12)' allowNull='N' position='120' length='11' type='Num' allowDecimal=''    allowMinus='N'  descr='건수 차량운반구' />
+        <Column ColID='(13)' allowNull='N' position='131' length='13' type='Num' allowDecimal='N'    allowMinus=''  descr='공급가액 차랑 운반구' />
+        <Column ColID='(14)' allowNull='N' position='144' length='13' type='Num' allowDecimal='N'    allowMinus=''  descr='세액 차량운반구' />
+        <Column ColID='(15)' allowNull='N' position='157' length='11' type='Num' allowDecimal=''    allowMinus='N'  descr='건수 기타 감가상각' />
+        <Column ColID='(16)' allowNull='N' position='168' length='13' type='Num' allowDecimal='N'    allowMinus=''  descr='공급가액 기타 감가상각' />
+        <Column ColID='(17)' allowNull='N' position='181' length='13' type='Num' allowDecimal='N'    allowMinus=''  descr='세액 기타 감가상각' />
+        <Column ColID='(18)' allowNull='Y' position='194' length='6'  type='Num' allowDecimal=''    allowMinus=''  descr='공란' />
+	</Columns>
+</xml>

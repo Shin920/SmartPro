@@ -1,0 +1,150 @@
+﻿/*************************************************
+
+Publishing by EUREKACNS.
+Last modified 2021.06.
+
+**************************************************/
+
+/* font-include */
+
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+@charset "utf-8";
+
+@-ms-viewport{width:device-width;}
+@-o-viewport{width:device-width;}
+@-moz-viewport{width:device-width;}
+@-webkit-viewport{width:device-width;}
+@viewport{width:device-width;}
+
+
+/* common */
+*{margin:0; padding:0; text-decoration: none;}
+/*.notosanskr{font-family: 'Noto Sans KR', sans-serif,'돋움',Dotum;}*/
+body{font-family: 'Noto Sans KR', sans-serif,'돋움',Dotum;}
+img{border:0;}
+a{text-decoration:none;}
+input{
+    width:236px;
+    height:60px;
+    padding:0 20px;    
+    border:1px solid #e5e5e5;
+    border-radius:3px;
+    color:#222;
+    font-size:20px;
+}
+
+select{
+    width:278px;
+    height:50px;
+    margin-bottom:3px;
+    padding:0 16px;    
+    border:1px solid #e5e5e5;
+    border-radius:3px;
+    color:#444;
+    font-size:16px;
+    cursor: pointer;
+}
+
+/* layout */
+.loginbox{
+    position:relative;
+    width:800px; 
+    height:600px;
+    margin:0 auto;
+    margin-top:calc(50vh - 300px);
+    background-color:#fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2)
+}
+
+.lb_left{
+    float:left;
+    width:477px;
+    height:598px;
+    background-color:blue;
+    border:1px solid #ccc;
+}
+
+.lb_left img{
+    margin-top:40px;
+    margin-left:30px;
+}
+
+.lb_right{
+    float:right;
+    width:299px;
+    height:598px;
+    padding-left:21px;
+    background:url(../images/bg_pattern.png) no-repeat top right;
+    background-color:#fff;
+    border:1px solid #ccc;
+    border-left:0;
+}
+
+.input_id{
+    margin-top:80px;
+}
+.input_pw{
+    margin-top:6px;
+}
+
+a.btn_login, .btn_login:visited{
+    display: inline-block;
+    width:236px;
+    height:60px;
+    margin-top:20px;
+    padding:0 20px;  
+    background-color:#376fd2;
+    border:1px solid #275ebe;
+    border-radius:3px;
+    color:#fff;
+    font-size:24px;
+    font-weight:600;
+    text-align: center;
+    line-height: 60px;
+}
+
+.btn_login:hover, .btn_login:active{
+    background-color:#224482;
+    border:1px solid #18366e;
+}
+
+.lb_option{
+    margin-top:75px;
+}
+
+
+/* mes-login */
+.mes_bg{
+    background:url(../images/background_mes.jpg) no-repeat 0 0;
+    background-size:cover;
+    background-color:#F1F6F9;
+}
+
+/* mes-login */
+.erp_bg {
+    background: url(../images/background_erp.jpg) no-repeat 0 0;
+    background-size: cover;
+    background-color: #F1F6F9;
+}
+
+.mes_bg_00{
+    background:url(../images/bg_mes_00.png) no-repeat 0 0;
+}
+
+.mes_bg_01{
+    background:url(../images/bg_mes_01.png) no-repeat 0 0;
+}
+
+.mes_bg_02{
+    background:url(../images/bg_mes_02.png) no-repeat 0 0;
+}
+
+.mes_bg_03{
+    background:url(../images/bg_mes_03.png) no-repeat 0 0;
+}
+
+.mes_bg_04{
+    background:url(../images/bg_mes_04.png) no-repeat 0 0;
+}
+

@@ -1,0 +1,130 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="Master_Main" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0" />
+    <title>Smart Pro Mobile</title>
+    <script src="/SmartPro/Mobile/Contents/js/jquery-3.5.1.js"></script>
+    <script src="/SmartPro/Mobile/Contents/js/dashboard.js"></script>
+    <link href="/SmartPro/Mobile/Contents/css/mobile.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+
+        function inIt() {
+            //메인메뉴 표기
+            addTabMenu("Main", "메뉴선택", "/SmartPro/Mobile/Form/Main.aspx");
+        }
+
+        function _goUrl(pgm_id, pgm_text, pgm_url) {
+
+            //Default.aspx 에 있는 함수실행
+            addTabMenu(pgm_id, pgm_text, pgm_url);
+
+            //열려있는 메뉴 창 닫기
+            $("#gnb_on").click();
+        }
+    </script>
+
+</head>
+<body onload="inIt();">
+    <form id="form1" runat="server">
+        <div id="wrap">
+            <div id="header">
+                <div id="gnb_off">
+				    <a href="#">
+					    <img src="/SmartPro/Mobile/Contents/images/icon_menu.png" alt="전체메뉴" />
+				    </a>
+			    </div>
+
+			    <div id="gnb_box" style="display: none;">
+				    <div id="gnb_on">
+					    <a href="#">
+						    <img src="/SmartPro/Mobile/Contents/images/menu_w.png" alt="전체메뉴" />
+					    </a>
+				    </div>
+			    </div>
+
+                <div id="logo">
+                    <a href="/SmartPro/Mobile/Default.aspx">
+                        <dx:ASPxImage ID="imgLogo" runat="server" ImageUrl="/SmartPro/Mobile/Contents/images/m_logo.png" />
+                    </a>
+                </div>
+
+                <div id="logout">
+                    <asp:LoginStatus ID="LoginStatus2" runat="server" LogoutAction="Redirect" ToolTip="로그아웃" BorderWidth="0"
+                        LogoutPageUrl="/SmartPro/Mobile/Account/Logout.aspx" Width="37" LogoutImageUrl="/SmartPro/Mobile/Contents/images/logout.png" />
+                </div>
+            </div>
+
+            <%-- 메뉴정보 입력 하는 곳 --%>
+            <ul id="m_wrap" style="display: none;">
+
+			    <li class="group">
+				    <div id="title_1" class="gnb on">
+					    <h1>입고</h1>
+				    </div>
+
+				    <ul class="snb hide">
+                        <li><a href="javascript:_goUrl('PO001', '구매입고', '/SmartPro/Mobile/Form/PO/PO001/PO001.aspx')">구매입고</a></li>
+<%--					    <li><a href="javascript:_goUrl('SM001', '일마감조회', '/SmartPro/Mobile/Form/SM/SM001/SM001.aspx')">일마감조회</a></li>
+					    <li><a href="javascript:_goUrl('SM002', '월마감조회', '/SmartPro/Mobile/Form/SM/SM002/SM002.aspx')">월마감조회</a></li>
+                        <li><a href="javascript:_goUrl('SM003', '년마감조회', '/SmartPro/Mobile/Form/SM/SM003/SM003.aspx')">년마감조회</a></li>--%>
+				    </ul>
+			    </li>			    
+
+                <li class="group">
+				    <div id="title_2" class="gnb on">
+					    <h1>출고</h1>
+				    </div>
+
+                    <ul class="snb hide">
+                        <li><a href="javascript:_goUrl('MM015', 'AS 리포트', '/SmartPro/Mobile/Form/MM/MM015/MM015.aspx')">AS 리포트</a></li>
+                        
+				    </ul>
+			    </li>
+
+                <li class="group">
+				    <div id="title_3" class="gnb on">
+					    <h1>재고실사</h1>
+				    </div>
+
+                    <ul class="snb hide">
+                        <li><a href="javascript:_goUrl('MM017', '재고실사', '/SmartPro/Mobile/Form/MM/MM017/MM017.aspx')">재고실사</a></li>
+                        
+				    </ul>
+			    </li>
+
+                <!--
+                <li class="group">
+				    <div id="title_3" class="gnb on">
+					    <h1>실사처리</h1>
+				    </div>
+
+                    <ul class="snb hide">
+                        <li><a href="javascript:_goUrl('MM016', '실사조정', '/SmartPro/Mobile/Form/MM/MM016/MM016.aspx')">실사조정</a></li>
+                        <li><a href="javascript:_goUrl('MM017', '정기실사결과', '/SmartPro/Mobile/Form/MM/MM017/MM017.aspx')">정기실사결과</a></li>
+				    </ul>
+			    </li>
+                -->
+
+		    </ul>
+
+            <div id="footer">
+			    <div class="copyright">
+				    <p>Copyrightⓒ2008 지인CNS㈜Inc. All rights reserved.</p>	
+			    </div>
+		    </div>
+
+             <div id="con_wrap">
+                <div id="table_wrap">
+                    <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                </div>
+            </div>
+
+        </div>
+    </form>
+</body>
+</html>

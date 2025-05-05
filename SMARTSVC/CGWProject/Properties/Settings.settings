@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CGWProject.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CGWProject_CGW_CGW" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SmartPro/CGW.asmx</Value>
+    </Setting>
+    <Setting Name="CGWProject_GObjSVC_GObjSVC" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/SINT/GObjSVC.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

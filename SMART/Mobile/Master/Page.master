@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Page.master.cs" Inherits="Master_Page" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Smart Pro Mobile</title>
+
+    <script src="/SmartPro/Mobile/Contents/js/jquery-3.5.1.js"></script>
+    <script src="/SmartPro/Mobile/Contents/js/dashboard.js"></script>
+    <script src="/SmartPro/Mobile/Contents/js/PageMaster.js"></script>
+    <link href="/SmartPro/Mobile/Contents/css/mobile.css" rel="stylesheet" />
+
+    <script type="text/javascript">
+        
+
+        // 텍스트 area나 텍스트 박스일 경우는 백스페이스 허용하고 그 외에 밖에서는 백스페이스 예외처리    
+        // devExpress콤보박스 백스패이스 금지 예외처리
+        document.onkeydown = function () {
+
+            if (event.keyCode == 8) {
+                if (event.srcElement.type == "text" || event.srcElement.type == "textarea") {
+
+                    try {
+                        if (event.srcElement.readOnly == true) {
+                            return false;
+                        } else {
+                            return true;
+                        }
+                    } catch (e) {
+                        return true;
+                    }
+
+                } else {
+                    return false;
+                }
+            }
+        }
+
+
+    </script>
+
+</head>
+<body  onload="PageInit();">
+    <form id="form1" runat="server">
+
+        <!--  화면 표시 -->
+        <asp:ContentPlaceHolder ID="PageContent" runat="server" />
+
+
+        <!-- 일반 팝업창 -->
+        <dx:ASPxPopupControl ID="mastPopForm" ClientInstanceName="mastPopForm" runat="server" 
+            PopupHorizontalAlign="WindowCenter" PopupVerticalAlign="WindowCenter" AllowResize="true" 
+            AllowDragging="true" ShowCloseButton="true" CloseAction="CloseButton" ScrollBars="None"
+            Modal="True" Height="400px" Width="400" HeaderText="Code Select" AppearAfter="0">
+            <ClientSideEvents Closing="function(s, e) {  }"   PopUp="function(s, e) {  }"
+                CloseUp="function(s, e) { mastPopForm.SetContentUrl('about:blank');	}" >
+            </ClientSideEvents>
+            <ContentCollection>
+       
+            </ContentCollection>       
+        </dx:ASPxPopupControl>
+
+        <!-- 로딩 판넬 -->
+        <dx:ASPxLoadingPanel ID="mastLoadingPanel" runat="server" ClientInstanceName="mastLoadingPanel" Modal="True"></dx:ASPxLoadingPanel>
+
+    </form>
+</body>
+</html>
